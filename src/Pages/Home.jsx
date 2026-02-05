@@ -11,18 +11,18 @@ const Home = () => {
       alert("item is added")
    }
   return (
-    <div className='flex gap-4 flex-wrap p-4 '>
+    <div className='flex gap-10 flex-wrap  m-14'>
       
       {
         product.map(function(elem){
             
             return(
                 
-             <div key={elem.id} className='h-auto w-60 bg-sky-300 rounded-2xl p-5'  >
+             <div key={elem.id} className='h-auto w-60 bg-gray-100 rounded p-5'  >
                 <img src={elem.image} alt={elem.name} className='h-44 w-full' onClick={()=> navigate(`/productDetails/${elem.id}`)} />
                 <h1>{elem.name}</h1>
-                <h1>₹ {elem.price}</h1>
-                <button className='bg-blue-800 text-white p-1 rounded mt-3 active:scale-90' onClick={()=>addCart(elem)} >Add to cart</button>
+                <h1 className='text-red-600'>₹ {elem.price}</h1>
+                <button className='bg-cyan-900 text-white p-1 rounded mt-3 active:scale-90 w-full' onClick={()=>addCart(elem)} >Add to cart</button>
              </div>
             )
         })
