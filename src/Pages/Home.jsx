@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { mystore } from '../contextAPI'
 import { useNavigate } from 'react-router-dom'
+import SwiperLibrary from '../components/SwiperLibrary'
 
 const Home = () => {
    let {product,setCart} = useContext(mystore)
@@ -11,8 +12,15 @@ const Home = () => {
       alert("item is added")
    }
   return (
-    <div className='flex gap-10 flex-wrap  m-14'>
-      
+    <div className='bg-gradient-to-b from-teal-500 to-white' >
+        
+            
+        
+
+
+
+        <div className='flex gap-10 flex-wrap  px-14 py-10'>
+
       {
         product.map(function(elem){
             
@@ -27,32 +35,9 @@ const Home = () => {
             )
         })
       }
+      </div>
+      
     </div>
-
-
-
-
-
-
-
-    //  <div className="p-6">
-    //   <div className="flex flex-wrap gap-6">
-    //     {product.map((item) => (
-    //       <div
-    //         key={item.id}
-    //         className="h-64 w-60 bg-sky-300 rounded-xl p-4"
-    //       >
-    //         <img
-    //           src={item.image}
-    //           alt={item.name}
-    //           className="h-32 w-full object-cover rounded"
-    //         />
-    //         <h2 className="mt-2 font-semibold">{item.name}</h2>
-    //         <p>₹{item.price}</p>
-    //       </div>
-    //     ))}
-    //   </div>
-    // </div>
 
 
   )

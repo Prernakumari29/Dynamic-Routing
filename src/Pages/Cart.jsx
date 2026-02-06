@@ -4,14 +4,14 @@ import { mystore } from '../contextAPI'
 const Cart = () => {
     let{cart } = useContext(mystore);
   return (
-    <div>
-      <h1>this is cart page</h1>
+    <div >
+      {cart.length == 0 && <p>Your cart is empty</p>}
       {
         cart.map(function(elem){
             return (
-                <div key={elem.id} className='flex h-40 w-full  border-2 gap-4 justify-between  pr-4 items-end ' >
-                    <div className=''>
-                         <img src={elem.image} alt="" />
+                <div key={elem.id} className=' h-44 flex  w-full  border-2  justify-between  pr-4 items-end mt-2 bg-gray-100' >
+                    <div className='h-full' >
+                         <img src={elem.image} alt="" className='h-full'/>
                     </div>
                     <div >
                         <h1>This is {elem.name}</h1>

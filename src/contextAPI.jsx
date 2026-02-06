@@ -1,4 +1,22 @@
 import { createContext, useState } from "react";
+import smartMobile from "./electronic-Images/SmartMobile.avif"
+import keypad from "./electronic-Images/Keypad.webp"
+import Headset from "./electronic-Images/Headset.avif"
+import Smartwatch from "./electronic-Images/Smartwatch.avif"
+import Bluetoothspeaker from "./electronic-Images/Bluetoothspeaker.avif"
+import Tablet from "./electronic-Images/Tablet.avif"
+import Keyboard from "./electronic-Images/Keyboard.avif"
+import Mouse from "./electronic-Images/Mouse.avif"
+import Gamingconsole from "./electronic-Images/Gamingconsole.avif"
+import Camera from "./electronic-Images/Camera.avif"
+
+
+
+
+
+
+
+
 
 export let mystore = createContext();
 
@@ -9,61 +27,61 @@ export let ContextProvider = ({children})=>{
     id: 1,
     name: "Smartphone",
     price: 12999,
-    image: "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSYF8Uduw_DvgwdU2MLr6avtAzt5Pgk07mYDar4CCDnYzh8yg7F2DgPitcuWDAIuqiuDHB0epgqqW6fSY8CrVhCHMj4sdcAGUucGkqZ-jGZAsnavJAZrEf52xrGaqQxsTzmlawbxg&usqp=CAc",
+    image:smartMobile ,
   },
   {
     id: 2,
-    name: "Laptop",
-    price: 54999,
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmsGow6BfyXzfJj9jGh6VTn4IrNpVczYBgnw&s",
+    name: "Keypad Phone",
+    price: 999,
+    image: keypad,
   },
   {
     id: 3,
     name: "Headphones",
     price: 2999,
-    image: "https://dummyimage.com/300x300/87ceeb/000000&text=Product",
+    image: Headset,
   },
   {
     id: 4,
     name: "Smart Watch",
     price: 4999,
-    image: "https://via.placeholder.com/300?text=Smart+Watch",
+    image: Smartwatch,
   },
   {
     id: 5,
     name: "Bluetooth Speaker",
     price: 1999,
-    image: "https://via.placeholder.com/300?text=Speaker",
+    image: Bluetoothspeaker,
   },
   {
     id: 6,
     name: "Tablet",
     price: 18999,
-    image: "https://via.placeholder.com/300?text=Tablet",
+    image: Tablet,
   },
   {
     id: 7,
     name: "Keyboard",
     price: 1499,
-    image: "https://via.placeholder.com/300?text=Keyboard",
+    image: Keyboard,
   },
   {
     id: 8,
     name: "Mouse",
     price: 799,
-    image: "https://via.placeholder.com/300?text=Mouse",
+    image: Mouse,
   },
   {
     id: 9,
     name: "Gaming Console",
     price: 39999,
-    image: "https://via.placeholder.com/300?text=Console",
+    image: Gamingconsole,
   },
   {
     id: 10,
     name: "Camera",
     price: 25999,
-    image: "https://via.placeholder.com/300?text=Camera",
+    image: Camera,
   },])
    
     const [cart , setCart] = useState([])
