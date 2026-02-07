@@ -12,12 +12,12 @@ const Home = () => {
       alert("item is added")
    }
   return (
-    <div className='bg-gradient-to-b from-teal-500 to-white' >
+    <div className='' >
         
             
         
 
-
+       <SwiperLibrary />
 
         <div className='flex gap-10 flex-wrap  px-14 py-10'>
 
@@ -26,7 +26,7 @@ const Home = () => {
             
             return(
                 
-             <div key={elem.id} className='h-auto w-60 bg-gray-100 rounded p-5'  >
+             <div key={elem.id} className='h-auto w-60 bg-gray-200 rounded p-5'  >
                 <img src={elem.image} alt={elem.name} className='h-44 w-full' onClick={()=> navigate(`/productDetails/${elem.id}`)} />
                 <h1>{elem.name}</h1>
                 <h1 className='text-red-600'>₹ {elem.price}</h1>
