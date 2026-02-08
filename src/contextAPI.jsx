@@ -86,7 +86,11 @@ export let ContextProvider = ({children})=>{
    
     const [cart , setCart] = useState([])
 
+    const [isAuth , setIsAuth] = useState(false)
+
+    const [userName , setUserName] = useState("")
+
     return (
-        <mystore.Provider value={{product,setProduct, cart , setCart}}>{children}</mystore.Provider>
+        <mystore.Provider value={{product,setProduct, cart , setCart,isAuth , setIsAuth,userName , setUserName}}>{children}</mystore.Provider>
     )
 }
