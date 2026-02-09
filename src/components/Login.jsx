@@ -12,18 +12,19 @@ const Login = ({setToggle}) => {
         let users = JSON.parse(localStorage.getItem("users")) || []
         const foundUser = users.find((u) => u.name === data.name && u.password === data.password)
         if(foundUser){
-            alert("Login successful")
+            alert("Login successful 🎉")
             setUserName(foundUser.name)
          setIsAuth(true)
          reset();
         }
         else{
-            alert("Not registered yet!!")
+            alert("Account not found 🚫.\n Please register first 😊.")
             reset();
         }         
     }
   return (
     <div >
+        <h1 className='text-2xl font-semibold text-center mb-6'>Login </h1>
         {/* --------------------------------Login Form------------------------------------------ */}
       <form onSubmit={handleSubmit(submit)} className='flex flex-col gap-8 ' >
 
@@ -48,7 +49,10 @@ const Login = ({setToggle}) => {
         </div>
       </form>
 
-      <p>If don't have an account then</p> <button className='text-blue-500' onClick={() => setToggle(false)}>Register here</button>
+      <div className='flex gap-2 mt-6'>
+        <p> Don't have an account ? </p> 
+      <button className='text-blue-900 hover:border-b-2 cursor-pointer' onClick={() => setToggle(false)}>register here</button>
+      </div>
     </div>
   )
 }
