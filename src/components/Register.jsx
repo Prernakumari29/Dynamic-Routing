@@ -43,7 +43,7 @@ const Register = ({setToggle}) => {
          <input {...register("[password" , {required:true , minLength:8})} type="text" placeholder='enter your password' 
         className='w-full px-4 py-2 border rounded-md bg-transparent outline-none focus:border-blue-500 '/>
          {errors.password?.type === "required" && <p className='text-red-500'>password is required</p> }
-         {errors.password?.type === "minlength" && <p className='text-red-500'>minimum length should be 8</p> }
+         {errors.password?.type === "minLength" && <p className='text-red-500'>minimum length should be 8</p> }
        </div>
 
         {/* --------------------------------------------email------------------------------------------------- */}
