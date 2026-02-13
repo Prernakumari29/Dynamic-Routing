@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { mystore } from '../contextAPI'
-import Category from './Category';
+
 
 const Navigation = () => {
     let{cart  , setIsAuth , userName } = useContext(mystore);
@@ -10,7 +10,8 @@ const Navigation = () => {
         <h1 className='font-serif'> <span className='text-4xl font-serif '>S</span>hop <span className='text-2xl font-serif '>S</span>top <i className="ri-shopping-bag-4-fill text-white text-2xl"></i></h1>
       <nav className='flex gap-9' >
         <Link to='/' className='hover:border-b active:scale-90 mt-1'>Home</Link>
-        <button className='hover:border-b active:scale-90' ><Category /></button>
+
+
         <Link to='/cart' className='hover:border-b active:scale-90 mt-1' >cart<span className='ml-1 bg-white text-cyan-500 h-5 w-5 rounded-full inline-flex items-center justify-center text-sm '>{cart.length}</span></Link>
         <button className='hover:border-b active:scale-90' onClick={ () =>  setIsAuth(false)}>Log out</button>
         <h1 className='bg-green-400 h-8 w-8 rounded-full text-center pt-1'>{userName.substring(0,1)}</h1>

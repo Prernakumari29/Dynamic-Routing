@@ -9,6 +9,25 @@ import Keyboard from "./electronic-Images/Keyboard.avif"
 import Mouse from "./electronic-Images/Mouse.avif"
 import Gamingconsole from "./electronic-Images/Gamingconsole.avif"
 import Camera from "./electronic-Images/Camera.avif"
+import WomenDress1 from "./electronic-Images/WomenDress1.avif"
+import WomenDress2 from "./electronic-Images/WomenDress2.avif"
+import WomenDress3 from "./electronic-Images/WomenDress3.avif"
+import WomenDress4 from "./electronic-Images/WomenDress4.avif"
+import MenDress1 from "./electronic-Images/MenDress1.avif"
+import MenDress2 from "./electronic-Images/MenDress2.avif"
+import MenDress3 from "./electronic-Images/MenDress3.avif"
+import MenDress4 from "./electronic-Images/MenDress4.avif"
+import HomeAplliance from "./electronic-Images/HomeAplliance.avif"
+import HomeDecor from "./electronic-Images/HomeDecor.avif"
+import KidDress1 from "./electronic-Images/KidDress1.avif"
+
+
+
+
+
+
+
+
 
 
 
@@ -25,6 +44,7 @@ export let ContextProvider = ({children})=>{
     const[product , setProduct] = useState(
   [ {
     id: 1,
+    category : "SmartPhone",
     title: "Samsung Galaxy M14",
     name: "Smartphone",
     brand: "Samsung",
@@ -44,6 +64,7 @@ export let ContextProvider = ({children})=>{
   },
   {
     id: 2,
+    category : "SmartPhone",
     title: "Nokia 105 Classic",
     name: "Keypad Phone",
     brand: "Nokia",
@@ -63,6 +84,7 @@ export let ContextProvider = ({children})=>{
   },
   {
     id: 3,
+    category : "Sm",
     title: "Boat Rockerz 450",
     name: "Headphones",
     brand: "Boat",
@@ -82,6 +104,7 @@ export let ContextProvider = ({children})=>{
   },
   {
     id: 4,
+    category : "Sm",
     title: "Noise ColorFit Pro",
     name: "Smart Watch",
     brand: "Noise",
@@ -101,6 +124,8 @@ export let ContextProvider = ({children})=>{
   },
   {
     id: 5,
+    category : "Sm",
+
     title: "JBL Flip 5",
     name: "Bluetooth Speaker",
     brand: "JBL",
@@ -120,6 +145,8 @@ export let ContextProvider = ({children})=>{
   },
   {
     id: 6,
+    category : "Sm",
+
     title: "Lenovo Tab M10",
     name: "Tablet",
     brand: "Lenovo",
@@ -139,6 +166,8 @@ export let ContextProvider = ({children})=>{
   },
   {
     id: 7,
+    category : "Sm",
+
     title: "Logitech Mechanical Keyboard",
     name: "Keyboard",
     brand: "Logitech",
@@ -158,6 +187,8 @@ export let ContextProvider = ({children})=>{
   },
   {
     id: 8,
+    category : "Sm",
+
     title: "HP Wireless Mouse",
     name: "Mouse",
     brand: "HP",
@@ -177,6 +208,8 @@ export let ContextProvider = ({children})=>{
   },
   {
     id: 9,
+    category : "Sm",
+
     title: "Sony PlayStation 5",
     name: "Gaming Console",
     brand: "Sony",
@@ -196,6 +229,8 @@ export let ContextProvider = ({children})=>{
   },
   {
     id: 10,
+    category : "Sm",
+
     title: "Canon EOS 1500D",
     name: "Camera",
     brand: "Canon",
@@ -220,7 +255,34 @@ export let ContextProvider = ({children})=>{
 
     const [userName , setUserName] = useState("")
 
+    const [viewData , setViewData] = useState([
+      {
+        id:1,
+        image1: WomenDress1,
+        image2: WomenDress2,
+        image3: WomenDress3,
+        image4: WomenDress4,
+      }, 
+      {
+        id:2,
+        image1: MenDress1,
+        image2: MenDress2,
+        image3: MenDress3,
+        image4: MenDress4,
+      },
+       {
+        id:3,
+        image1:HomeAplliance,
+        image2:HomeDecor,
+        image3:Mouse,
+        image4:KidDress1,
+      }
+
+    ])
+
+    
+
     return (
-        <mystore.Provider value={{product,setProduct, cart , setCart,isAuth , setIsAuth,userName , setUserName}}>{children}</mystore.Provider>
+        <mystore.Provider value={{product,setProduct, cart , setCart,isAuth , setIsAuth,userName , setUserName , viewData , setViewData }}>{children}</mystore.Provider>
     )
 }

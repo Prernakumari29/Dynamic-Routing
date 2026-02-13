@@ -8,6 +8,7 @@ import Navigation from './Pages/Navigation'
 import { mystore } from './contextAPI'
 import Authentication from './components/Authentication'
 import bg from './assets/AuthBackground.jpg'
+import ViewMoreDetails from './Pages/ViewMoreDetails'
 
 const App = () => {
 
@@ -31,6 +32,8 @@ const App = () => {
         
         <Route path='/cart' element={<Cart />} />
         <Route path='/productDetails/:id' element={<ProductDetails />} />
+        <Route path='/ViewMoreDetails/:id' element={<ViewMoreDetails />} />
+
       </Routes>
     </div>
   )

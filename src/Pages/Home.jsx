@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { mystore } from '../contextAPI'
 import { useNavigate } from 'react-router-dom'
 import SwiperLibrary from '../components/SwiperLibrary'
+import BelowSwiper from '../components/BelowSwiper'
 
 const Home = () => {
    let {product,setCart} = useContext(mystore)
@@ -15,9 +16,8 @@ const Home = () => {
     <div >
        <SwiperLibrary />
 
-
+        <BelowSwiper />
         <div className='flex gap-10 flex-wrap  px-14 py-10 '>
-
       {
         product.map(function(elem){
             
