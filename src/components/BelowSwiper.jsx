@@ -12,7 +12,7 @@ const BelowSwiper = () => {
       {
         viewData.map(function(elem){
             return(
-                <div className='h-96 w-96 bg-gray-200 shadow shadow-black/30 pl-7 pt-4 rounded' >
+                <div key={elem.id} className='h-96 w-96 bg-gray-200 shadow shadow-black/30 pl-7 pt-4 rounded' >
                     <div className=' flex  gap-3 '>
                  
                  <div className='flex flex-col gap-3'>

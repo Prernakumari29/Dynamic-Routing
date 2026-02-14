@@ -35,6 +35,7 @@ const App = () => {
         <Route path='/ViewMoreDetails/:id' element={<ViewMoreDetails />} />
 
       </Routes>
+
     </div>
   )
 }
