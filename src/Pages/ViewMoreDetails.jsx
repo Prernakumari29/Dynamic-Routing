@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { useParams } from 'react-router-dom'
 import { mystore } from '../contextAPI'
+import SalesAnnimation from '../components/SalesAnnimation'
 
 const ViewMoreDetails = () => {
     let {id } = useParams()
@@ -13,6 +14,11 @@ const ViewMoreDetails = () => {
     console.log("submitted")
   }
   return (
+
+    <>
+    <SalesAnnimation />
+
+
     <div className='flex gap-10 flex-wrap  px-30 py-10'>
         {
         singleProduct.products.map(function(elem){
@@ -37,6 +43,7 @@ const ViewMoreDetails = () => {
       
 
     </div>
+    </>
   )
 }
 

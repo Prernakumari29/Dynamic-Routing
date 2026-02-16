@@ -16,7 +16,7 @@ const SwiperLibrary = () => {
     <div>
       <div className='h-96 w-full '>
         <Swiper pagination={{ clickable: true }} modules={[Pagination , Autoplay]} 
-                 autoplay={{delay: 2500,disableOnInteraction: false,}} 
+                 autoplay={{delay: 2500,disableOnInteraction: false}} 
                  className="h-full relative pb-10 ">
           <SwiperSlide>
               <img className='h-96  object-cover object-center absolute left-[50%] transform -translate-x-1/2 top-5' src={SlideNew} alt="" />
