@@ -82,213 +82,214 @@ export let mystore = createContext();
 
 export let ContextProvider = ({children})=>{
 
-    const[product , setProduct] = useState(
-  [ {
-    id: 1,
-    category : "SmartPhone",
-    title: "Samsung Galaxy M14",
-    name: "Smartphone",
-    brand: "Samsung",
-    description: "6.6-inch display, 6000mAh battery and powerful processor for smooth performance.",
-    price: 12999,
-    oldPrice: 20400,
-    rating: 4.5,
-    stock: 18,
-    delivery: "Free Delivery in 2-3 Days",
-    features: [
-      "6000mAh Battery , ",
-      "6.6-inch FHD+ Display",
-      "5G Support",
-      "128GB Storage"
-    ],
-    image: smartMobile
-  },
-  {
-    id: 2,
-    category : "SmartPhone",
-    title: "Nokia 105 Classic",
-    name: "Keypad Phone",
-    brand: "Nokia",
-    description: "Long-lasting battery with durable design and clear sound quality.",
-    price: 999,
-    oldPrice: 1599,
-    rating: 4.2,
-    stock: 35,
-    delivery: "Free Delivery in 4-5 Days",
-    features: [
-      "Long Battery Life , ",
-      "Dual SIM , ",
-      "Durable Body , ",
-      "FM Radio."
-    ],
-    image: keypad
-  },
-  {
-    id: 3,
-    category : "Sm",
-    title: "Boat Rockerz 450",
-    name: "Headphones",
-    brand: "Boat",
-    description: "Wireless over-ear headphones with deep bass and 15 hours playback.",
-    price: 2999,
-    oldPrice: 5999,
-    rating: 4.6,
-    stock: 22,
-    delivery: "Free Delivery in 2 Days",
-    features: [
-      "15 Hours Playback , ",
-      "Deep Bass , ",
-      "Bluetooth 5.0 , ",
-      "Lightweight Design."
-    ],
-    image: Headset
-  },
-  {
-    id: 4,
-    category : "Sm",
-    title: "Noise ColorFit Pro",
-    name: "Smart Watch",
-    brand: "Noise",
-    description: "Feature-packed smart watch designed to keep up with your active lifestyle.",
-    price: 4999,
-    oldPrice: 7999,
-    rating: 4.3,
-    stock: 12,
-    delivery: "Free Delivery Tomorrow",
-    features: [
-      "Heart Rate Monitor , ",
-      "Sleep Tracking , ",
-      "IP68 Water Resistant , ",
-      "7 Days Battery."
-    ],
-    image: Smartwatch
-  },
-  {
-    id: 5,
-    category : "Sm",
+    const[product , setProduct] = useState([
+  // {
+  //   id: 1,
+  //   category : "SmartPhone",
+  //   title: "Samsung Galaxy M14",
+  //   name: "Smartphone",
+  //   brand: "Samsung",
+  //   description: "6.6-inch display, 6000mAh battery and powerful processor for smooth performance.",
+  //   price: 12999,
+  //   oldPrice: 20400,
+  //   rating: 4.5,
+  //   stock: 18,
+  //   delivery: "Free Delivery in 2-3 Days",
+  //   features: [
+  //     "6000mAh Battery , ",
+  //     "6.6-inch FHD+ Display",
+  //     "5G Support",
+  //     "128GB Storage"
+  //   ],
+  //   image: smartMobile
+  // },
+  // {
+  //   id: 2,
+  //   category : "SmartPhone",
+  //   title: "Nokia 105 Classic",
+  //   name: "Keypad Phone",
+  //   brand: "Nokia",
+  //   description: "Long-lasting battery with durable design and clear sound quality.",
+  //   price: 999,
+  //   oldPrice: 1599,
+  //   rating: 4.2,
+  //   stock: 35,
+  //   delivery: "Free Delivery in 4-5 Days",
+  //   features: [
+  //     "Long Battery Life , ",
+  //     "Dual SIM , ",
+  //     "Durable Body , ",
+  //     "FM Radio."
+  //   ],
+  //   image: keypad
+  // },
+  // {
+  //   id: 3,
+  //   category : "Sm",
+  //   title: "Boat Rockerz 450",
+  //   name: "Headphones",
+  //   brand: "Boat",
+  //   description: "Wireless over-ear headphones with deep bass and 15 hours playback.",
+  //   price: 2999,
+  //   oldPrice: 5999,
+  //   rating: 4.6,
+  //   stock: 22,
+  //   delivery: "Free Delivery in 2 Days",
+  //   features: [
+  //     "15 Hours Playback , ",
+  //     "Deep Bass , ",
+  //     "Bluetooth 5.0 , ",
+  //     "Lightweight Design."
+  //   ],
+  //   image: Headset
+  // },
+  // {
+  //   id: 4,
+  //   category : "Sm",
+  //   title: "Noise ColorFit Pro",
+  //   name: "Smart Watch",
+  //   brand: "Noise",
+  //   description: "Feature-packed smart watch designed to keep up with your active lifestyle.",
+  //   price: 4999,
+  //   oldPrice: 7999,
+  //   rating: 4.3,
+  //   stock: 12,
+  //   delivery: "Free Delivery Tomorrow",
+  //   features: [
+  //     "Heart Rate Monitor , ",
+  //     "Sleep Tracking , ",
+  //     "IP68 Water Resistant , ",
+  //     "7 Days Battery."
+  //   ],
+  //   image: Smartwatch
+  // },
+  // {
+  //   id: 5,
+  //   category : "Sm",
 
-    title: "JBL Flip 5",
-    name: "Bluetooth Speaker",
-    brand: "JBL",
-    description: "Portable speaker with powerful bass and waterproof design.",
-    price: 1999,
-    oldPrice: 2500,
-    rating: 4.4,
-    stock: 20,
-    delivery: "Free Delivery in 3 Days",
-    features: [
-      "Powerful Bass , ",
-      "Waterproof , ",
-      "12 Hours Playtime , ",
-      "Portable Design."
-    ],
-    image: Bluetoothspeaker
-  },
-  {
-    id: 6,
-    category : "Sm",
+  //   title: "JBL Flip 5",
+  //   name: "Bluetooth Speaker",
+  //   brand: "JBL",
+  //   description: "Portable speaker with powerful bass and waterproof design.",
+  //   price: 1999,
+  //   oldPrice: 2500,
+  //   rating: 4.4,
+  //   stock: 20,
+  //   delivery: "Free Delivery in 3 Days",
+  //   features: [
+  //     "Powerful Bass , ",
+  //     "Waterproof , ",
+  //     "12 Hours Playtime , ",
+  //     "Portable Design."
+  //   ],
+  //   image: Bluetoothspeaker
+  // },
+  // {
+  //   id: 6,
+  //   category : "Sm",
 
-    title: "Lenovo Tab M10",
-    name: "Tablet",
-    brand: "Lenovo",
-    description: "10.1-inch display tablet perfect for entertainment and productivity.",
-    price: 18999,
-    oldPrice: 20999,
-    rating: 4.1,
-    stock: 9,
-    delivery: "Free Delivery in 5 Days",
-    features: [
-      "10.1-inch Display , ",
-      "4GB RAM , ",
-      "Long Battery Life , ",
-      "Dolby Audio."
-    ],
-    image: Tablet
-  },
-  {
-    id: 7,
-    category : "Sm",
+  //   title: "Lenovo Tab M10",
+  //   name: "Tablet",
+  //   brand: "Lenovo",
+  //   description: "10.1-inch display tablet perfect for entertainment and productivity.",
+  //   price: 18999,
+  //   oldPrice: 20999,
+  //   rating: 4.1,
+  //   stock: 9,
+  //   delivery: "Free Delivery in 5 Days",
+  //   features: [
+  //     "10.1-inch Display , ",
+  //     "4GB RAM , ",
+  //     "Long Battery Life , ",
+  //     "Dolby Audio."
+  //   ],
+  //   image: Tablet
+  // },
+  // {
+  //   id: 7,
+  //   category : "Sm",
 
-    title: "Logitech Mechanical Keyboard",
-    name: "Keyboard",
-    brand: "Logitech",
-    description: "RGB backlit keyboard with smooth typing experience.",
-    price: 1499,
-    oldPrice: 2000,
-    rating: 4.5,
-    stock: 28,
-    delivery: "Free Delivery in 2 Days",
-    features: [
-      "RGB Lighting , ",
-      "Mechanical Keys , ",
-      "Anti-Ghosting , ",
-      "Durable Build."
-    ],
-    image: Keyboard
-  },
-  {
-    id: 8,
-    category : "Sm",
+  //   title: "Logitech Mechanical Keyboard",
+  //   name: "Keyboard",
+  //   brand: "Logitech",
+  //   description: "RGB backlit keyboard with smooth typing experience.",
+  //   price: 1499,
+  //   oldPrice: 2000,
+  //   rating: 4.5,
+  //   stock: 28,
+  //   delivery: "Free Delivery in 2 Days",
+  //   features: [
+  //     "RGB Lighting , ",
+  //     "Mechanical Keys , ",
+  //     "Anti-Ghosting , ",
+  //     "Durable Build."
+  //   ],
+  //   image: Keyboard
+  // },
+  // {
+  //   id: 8,
+  //   category : "Sm",
 
-    title: "HP Wireless Mouse",
-    name: "Mouse",
-    brand: "HP",
-    description: "Ergonomic wireless mouse with high precision tracking.",
-    price: 799,
-    oldPrice: 1599,
-    rating: 4.2,
-    stock: 40,
-    delivery: "Free Delivery in 3 Days",
-    features: [
-      "Wireless Connectivity , ",
-      "Ergonomic Design , ",
-      "High Precision , ",
-      "Long Battery Life."
-    ],
-    image: Mouse
-  },
-  {
-    id: 9,
-    category : "Sm",
+  //   title: "HP Wireless Mouse",
+  //   name: "Mouse",
+  //   brand: "HP",
+  //   description: "Ergonomic wireless mouse with high precision tracking.",
+  //   price: 799,
+  //   oldPrice: 1599,
+  //   rating: 4.2,
+  //   stock: 40,
+  //   delivery: "Free Delivery in 3 Days",
+  //   features: [
+  //     "Wireless Connectivity , ",
+  //     "Ergonomic Design , ",
+  //     "High Precision , ",
+  //     "Long Battery Life."
+  //   ],
+  //   image: Mouse
+  // },
+  // {
+  //   id: 9,
+  //   category : "Sm",
 
-    title: "Sony PlayStation 5",
-    name: "Gaming Console",
-    brand: "Sony",
-    description: "Next-gen gaming console with ultra-fast SSD and stunning graphics.",
-    price: 39999,
-    oldPrice: 45499,
-    rating: 4.8,
-    stock: 5,
-    delivery: "Express Delivery Available",
-    features: [
-      "Ultra-fast SSD , ",
-      "4K Gaming , ",
-      "Ray Tracing , ",
-      "DualSense Controller."
-    ],
-    image: Gamingconsole
-  },
-  {
-    id: 10,
-    category : "Sm",
+  //   title: "Sony PlayStation 5",
+  //   name: "Gaming Console",
+  //   brand: "Sony",
+  //   description: "Next-gen gaming console with ultra-fast SSD and stunning graphics.",
+  //   price: 39999,
+  //   oldPrice: 45499,
+  //   rating: 4.8,
+  //   stock: 5,
+  //   delivery: "Express Delivery Available",
+  //   features: [
+  //     "Ultra-fast SSD , ",
+  //     "4K Gaming , ",
+  //     "Ray Tracing , ",
+  //     "DualSense Controller."
+  //   ],
+  //   image: Gamingconsole
+  // },
+  // {
+  //   id: 10,
+  //   category : "Sm",
 
-    title: "Canon EOS 1500D",
-    name: "Camera",
-    brand: "Canon",
-    description: "24.1MP DSLR camera with high-quality image capture and WiFi support.",
-    price: 25999,
-    oldPrice: 30400,
-    rating: 4.6,
-    stock: 7,
-    delivery: "Free Delivery in 4 Days",
-    features: [
-      "24.1MP Sensor , ",
-      "WiFi Support , ",
-      "Full HD Recording , ",
-      "Interchangeable Lens ."
-    ],
-    image: Camera
-  },])
+  //   title: "Canon EOS 1500D",
+  //   name: "Camera",
+  //   brand: "Canon",
+  //   description: "24.1MP DSLR camera with high-quality image capture and WiFi support.",
+  //   price: 25999,
+  //   oldPrice: 30400,
+  //   rating: 4.6,
+  //   stock: 7,
+  //   delivery: "Free Delivery in 4 Days",
+  //   features: [
+  //     "24.1MP Sensor , ",
+  //     "WiFi Support , ",
+  //     "Full HD Recording , ",
+  //     "Interchangeable Lens ."
+  //   ],
+  //   image: Camera
+  // },
+  ])
    
     const [cart , setCart] = useState([])
 
@@ -625,14 +626,14 @@ export let ContextProvider = ({children})=>{
         class:9,
         products:[
           {
-    id: 119,
+    id: 301,
     name: "Layered Ruffle Dress",
     image: WomenDress2,
     oldPrice: 1799,
     newPrice: 1299,
   },
   {
-    id: 120,
+    id: 302,
     name: "Wedding Special Lehenga",
     image: WDress20,
     oldPrice: 5999,
