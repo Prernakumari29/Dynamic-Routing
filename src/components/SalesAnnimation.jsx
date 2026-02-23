@@ -27,8 +27,7 @@ const SalesAnnimation = () => {
       <div className='h-80 w-1/2 bg-amber-400 relative left-1/2 transform -translate-x-1/2 top-5 bg-center bg-cover rounded-2xl' style={{ backgroundImage: `url(${SaleAnnimation})` }}>
         <h1 className='text-4xl text-gray-900 text-center absolute top-[30%] left-1/2 transform -translate-1/2 font-serif'>{currenttext}</h1>
       
-      
-        
+       
       </div>
     </div>
   )

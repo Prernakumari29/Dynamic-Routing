@@ -10,7 +10,6 @@ const Home = () => {
 
    let productItem = async()=>{
     const productApi = await axios.get("https://fakestoreapi.com/products")
-    console.log(productApi.data)
     setProduct(productApi.data)
     
    }

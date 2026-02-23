@@ -1,11 +1,13 @@
 import React, { useContext } from 'react'
 import { mystore } from '../contextAPI'
+import Lottie from "lottie-react";
+import cartAnnimation from "../assets/Empty-cart .json";
 
 const Cart = () => {
     let{cart } = useContext(mystore);
   return (
     <div >
-      {cart.length == 0 && <p>Your cart is empty</p>}
+      {cart.length == 0 && <Lottie animationData={cartAnnimation} loop={true} style={{height:400 , width:400 , position:"absolute" , top:"50%", left:"50%" , transform: "translate(-50%, -50%)"}} />}
       {
         cart.map(function(elem){
             return (
