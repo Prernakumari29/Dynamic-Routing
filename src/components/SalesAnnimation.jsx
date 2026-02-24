@@ -17,7 +17,7 @@ const SalesAnnimation = () => {
     const interval = setInterval(() => {
       const random = Math.floor(Math.random()*text.length)
       setCurrentText(text[random])
-    }, 2000);
+    }, 1000);
      
     return ()=> clearInterval(interval)
   },[])

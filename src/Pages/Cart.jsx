@@ -4,10 +4,15 @@ import Lottie from "lottie-react";
 import cartAnnimation from "../assets/Empty-cart .json";
 
 const Cart = () => {
-    let{cart } = useContext(mystore);
+    let{cart,setCart } = useContext(mystore);
+
+    const handleRemove = (id)=>{
+      const updatedarr = cart.filter((item) => item.id !== id)
+      setCart(updatedarr)
+    }
   return (
     <div >
-      {cart.length == 0 && <Lottie animationData={cartAnnimation} loop={true} style={{height:400 , width:400 , position:"absolute" , top:"50%", left:"50%" , transform: "translate(-50%, -50%)"}} />}
+      {cart.length == 0 && <Lottie animationData={cartAnnimation} loop={true} style={{height:500 , width:500 , position:"absolute" , top:"50%", left:"50%" , transform: "translate(-50%, -50%)"}} />}
       {
         cart.map(function(elem){
             return (
@@ -18,8 +23,9 @@ const Cart = () => {
                     <div >
                         <h1>This is {elem.name}</h1>
                         <h1 className='text-red-500'>₹ {elem.price}</h1>
+                        <button className='text-white border bg-red-500 rounded p-1' onClick={()=>handleRemove(elem.id)}>Remove</button>
                     </div>
-
+                
                 </div>
 
             )
