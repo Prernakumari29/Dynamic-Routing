@@ -1,16 +1,20 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { mystore } from '../contextAPI'
 import { useNavigate } from 'react-router-dom'
 import SwiperLibrary from '../components/SwiperLibrary'
 import BelowSwiper from '../components/BelowSwiper'
 import axios from 'axios'
+import Lottie from "lottie-react";
+import loadingAnnimation from "../assets/loading.json"
 
 const Home = () => {
    let {product,setCart,setProduct} = useContext(mystore)
+   const [loading , setLoading] = useState(true)
 
    let productItem = async()=>{
     const productApi = await axios.get("https://fakestoreapi.com/products")
     setProduct(productApi.data)
+    setLoading(false)
     
    }
 
@@ -30,6 +34,9 @@ const Home = () => {
         <BelowSwiper />
         <div className='flex gap-10 flex-wrap  px-14 py-10 '>
       {
+        loading ? 
+        <Lottie animationData={loadingAnnimation} loop={true} style={{height:400 , width:400 , marginLeft: "500px"}} /> 
+        :
         product.map(function(elem){
             
             return(
