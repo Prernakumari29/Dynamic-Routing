@@ -10,6 +10,8 @@ import Authentication from './components/Authentication'
 import bg from './assets/AuthBackground.jpg'
 import ViewMoreDetails from './Pages/ViewMoreDetails'
 import ParticularProduct from './Pages/ParticularProduct'
+import Womens from './Pages/Womens'
+import Mens from './Pages/Mens'
 
 const App = () => {
 
@@ -30,11 +32,13 @@ const App = () => {
       <Navigation />
       <Routes>
         <Route path='/' element={<Home />} />
-        
+        <Route path='/womens' element={<Womens />} />
+        <Route path='/mens' element={<Mens />} />
         <Route path='/cart' element={<Cart />} />
         <Route path='/productDetails/:id' element={<ProductDetails />} />
         <Route path='/ViewMoreDetails/:id' element={<ViewMoreDetails />} />
         <Route path='/particularproduct/:id' element={<ParticularProduct />} />
+      
 
       </Routes>
 
