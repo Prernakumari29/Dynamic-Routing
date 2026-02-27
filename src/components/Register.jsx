@@ -1,6 +1,8 @@
 import React, { useContext } from 'react'
 import { mystore } from '../contextAPI'
 import { useForm } from 'react-hook-form'
+import {toast} from "react-toastify"
+import "react-toastify/dist/ReactToastify.css";
 
 const Register = ({setToggle}) => {
     const {handleSubmit , register , reset , formState:{errors}} = useForm();
@@ -13,16 +15,15 @@ const Register = ({setToggle}) => {
         // ---------------------check if already registered or not--------------------------------
         const alreadyRegisterd = oldData.find((u) => u.name === data.name && u.email === data.email)
         if(alreadyRegisterd){
-            alert("Looks like you already have an account.\nPlease log in 😊")
+            toast.warning("Looks like you already have an account.\nPlease log in 😊")
             reset()
             return
         }
 
         const updatedArr = [...oldData , data]
         localStorage.setItem("users" , JSON.stringify(updatedArr))
-        alert("You're successfully registered 🎉")
+        toast.info("You're successfully registered 🎉")
         setUserName(data.name)
-       setIsAuth(true)
        reset();
     }
   return (

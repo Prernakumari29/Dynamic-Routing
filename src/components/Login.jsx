@@ -1,6 +1,8 @@
 import React, { useContext } from 'react'
 import { mystore } from '../contextAPI'
 import { useForm } from "react-hook-form"
+import {toast} from "react-toastify"
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = ({setToggle}) => {
     let {setIsAuth, setUserName} = useContext(mystore)
@@ -12,13 +14,14 @@ const Login = ({setToggle}) => {
         let users = JSON.parse(localStorage.getItem("users")) || []
         const foundUser = users.find((u) => u.name === data.name && u.password === data.password)
         if(foundUser){
-            alert("Login successful 🎉")
+            // alert("Login successful 🎉")
+            toast.success("Login successful 🎉")
             setUserName(foundUser.name)
          setIsAuth(true)
          reset();
         }
         else{
-            alert("Account not found 🚫.\n Please register first 😊.")
+            toast.error("Account not found 🚫.\n Please register first 😊.")
             reset();
         }         
     }

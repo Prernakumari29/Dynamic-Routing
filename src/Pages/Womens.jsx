@@ -14,6 +14,10 @@ const Womens = () => {
        setCart((prev) => [...prev ,data])
        alert("item is added")
     }
+
+    if(!singleProduct){
+        return <h2>loading....</h2>
+    }
   return (
           <div className='flex gap-10 flex-wrap  px-30 py-10'>
 
