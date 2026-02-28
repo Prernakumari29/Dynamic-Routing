@@ -3,6 +3,7 @@ import { useContext } from 'react'
 
 import { mystore } from '../contextAPI'
 import { useNavigate } from 'react-router-dom'
+import WomenPoster from "../assets/WomenPoster.jpg"
 
 const Womens = () => {
     
@@ -19,6 +20,11 @@ const Womens = () => {
         return <h2>loading....</h2>
     }
   return (
+          <>
+          <div className='h-96 w-[40%]  bg-cover rounded-3xl m-4 bg-center bg-no-repeat relative left-1/2 transform -translate-x-1/2 top-5' style={{backgroundImage: `url(${WomenPoster})` } }>
+            
+          </div>
+
           <div className='flex gap-10 flex-wrap  px-30 py-10'>
 
       {
@@ -38,6 +44,7 @@ const Womens = () => {
         })
       }
     </div>
+    </>
   )
 }
 
