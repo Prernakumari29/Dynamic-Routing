@@ -1,15 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useContext } from 'react'
 
 import { mystore } from '../contextAPI'
 import { useNavigate } from 'react-router-dom'
-import WomenPoster from "../assets/WomenPoster.jpg"
+import WomenVideo from "../assets/WomenVideo.mp4"
+import WomenThreeTop from "../assets/WomenThreeTop.jpg"
+import WomenAimly from "../assets/WomenAimly.jpg"
+
 
 const Womens = () => {
     
     let {viewMoreData, setCart} = useContext(mystore)
     const singleProduct = viewMoreData.find((u) => u.id === 1)
     const navigate = useNavigate() 
+    const[volume , setVolume] = useState(true)
 
     const addCart = (data)=>{
        setCart((prev) => [...prev ,data])
@@ -21,13 +25,44 @@ const Womens = () => {
     }
   return (
           <>
-          <div className='h-96 w-[40%]  bg-cover rounded-3xl m-4 bg-center bg-no-repeat relative left-1/2 transform -translate-x-1/2 top-5' style={{backgroundImage: `url(${WomenPoster})` } }>
-            
+             <div className='h-10 bg-white shadow-md mb-15 shadow-gray-200 flex items-center justify-between'>
+              <div className='flex items-center gap-8 '>
+                <i className="ri-arrow-left-line font-bold text-3xl cursor-pointer" onClick={()=> navigate(-1)}></i>
+              <h1 className=''>1-50 of over 20,000 results for "<span className='text-orange-600 font-bold'>womens clothes</span>"</h1>
+              </div>
+              <h1 className='pl-1 pr-1 border mr-8 rounded'>sort by:</h1>
+             </div>
+
+
+{/* --------------------------------------------video Part-------------------------------------------------           */}
+          <div className='h-76   bg-gray-50 flex mt-8 ml-20 mr-20 rounded-2xl '>
+            <video src={WomenVideo} autoPlay loop muted={volume}  className='h-full relative rounded-2xl'/>
+            {volume? <button className='absolute top-1/2 left-[38%]' onClick={()=> setVolume(!volume)}><i class="ri-volume-mute-line  text-3xl text-black bg-gray-100 rounded-full p-1"></i></button>
+            :<button className='absolute top-1/2 left-[38%]' onClick={()=> setVolume(!volume)}><i className="ri-volume-up-line  text-3xl text-black bg-gray-100 rounded-full p-1"></i></button>}
+   
+{/* -----------------------------------Tank top Image ---------------------------------------------------- */}
+            <div className='bg-white  w-96 m-4 border border= border-gray-500 rounded'>
+              <div className='bg-white h-45 '>
+                 <img src={WomenThreeTop} alt="" className='h-full pl-25 rounded '  />
+                 <h1 className='text-center'>Aimly Women's regular fit sleeveless cotton <br /> Long Camisole slip Spaghetti Combo pack of 3</h1>
+                 <div className='flex'>
+                  <button className='bg-red-600 p-0.5 text-white ml-6 mt-1'>76% off</button>
+                 <h1 className='mt-1 ml-1 text-red-600'>Limited time deal</h1>
+                 </div>
+              </div>
+            </div>
+
+{/* -------------------------------------Aimly logo----------------------------------------------------------------- */}
+              <img src={WomenAimly} alt="" className='h-40 mt-20 ml-20' />
           </div>
 
-          <div className='flex gap-10 flex-wrap  px-30 py-10'>
+            
+          <h1 className='font-bold px-32 pt-5'>Results </h1>
+          <h2 className='text-gray-500 px-32'>Check each product page for other buying options. Price and other details may vary based on product size and colour.</h2>
+        
 
-      {
+          <div className='flex gap-10 flex-wrap  px-30 py-2'>
+      {       
         singleProduct.products.map(function(elem){
             return(
                 <div className='h-80 w-56 hover:bg-gray-100 p-3 rounded '> 

@@ -45,7 +45,7 @@ const Home = () => {
                 <img src={elem.image} alt={elem.title} className='h-44 w-full mb-5' onClick={()=> navigate(`/productDetails/${elem.id}`)} />
                 {/* <h1>{elem.title}</h1> */}
                 {elem.title.length>20 ? elem.title.slice(0,20) + "...": elem.title}
-                <h1 className='text-red-600 text-xl'><span className='text-black line-through text-sm'>₹{elem.price}</span> ₹ {elem.price}  </h1>
+                <h1 className='text-red-600 text-xl'><span className='text-black line-through text-sm'>${elem.price}</span> ${elem.price}  </h1>
                 <button className='bg-cyan-900 text-white p-1 rounded mt-3 active:scale-90 w-full cursor-pointer' onClick={()=>addCart(elem)} >Add to cart </button>
              </div>
             )
