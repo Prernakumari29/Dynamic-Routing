@@ -10,10 +10,10 @@ import WomenAimly from "../assets/WomenAimly.jpg"
 
 const Womens = () => {
     
-    let {viewMoreData, setCart} = useContext(mystore)
+    let {viewMoreData, setCart,volume , setVolume} = useContext(mystore)
     const singleProduct = viewMoreData.find((u) => u.id === 1)
     const navigate = useNavigate() 
-    const[volume , setVolume] = useState(true)
+    
 
     const addCart = (data)=>{
        setCart((prev) => [...prev ,data])
@@ -25,6 +25,7 @@ const Womens = () => {
     }
   return (
           <>
+ {/* ---------------------------------- 1-50 womens part---------------------------------------------------------  */}
              <div className='h-10 bg-white shadow-md mb-15 shadow-gray-200 flex items-center justify-between'>
               <div className='flex items-center gap-8 '>
                 <i className="ri-arrow-left-line font-bold text-3xl cursor-pointer" onClick={()=> navigate(-1)}></i>

@@ -649,9 +649,11 @@ export let ContextProvider = ({children})=>{
       },
     ])
 
+
+    const[volume , setVolume] = useState(true)
     
 
     return (
-        <mystore.Provider value={{product,setProduct, cart , setCart,isAuth , setIsAuth,userName , setUserName , viewData , setViewData , viewMoreData}}>{children}</mystore.Provider>
+        <mystore.Provider value={{product,setProduct, cart , setCart,isAuth , setIsAuth,userName , setUserName , viewData , setViewData , viewMoreData,volume , setVolume}}>{children}</mystore.Provider>
     )
 }
