@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import {  useNavigate, useParams } from 'react-router-dom'
 import { mystore } from '../contextAPI';
 
 const ProductDetails = () => {
@@ -50,6 +50,7 @@ const ProductDetails = () => {
         </div>
       </div>     
     </div>
+
     </div>
   )
 }

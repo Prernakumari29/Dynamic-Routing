@@ -12,6 +12,7 @@ import ViewMoreDetails from './Pages/ViewMoreDetails'
 import ParticularProduct from './Pages/ParticularProduct'
 import Womens from './Pages/Womens'
 import Mens from './Pages/Mens'
+import Footer from './components/Footer'
 
 const App = () => {
 
@@ -38,10 +39,9 @@ const App = () => {
         <Route path='/productDetails/:id' element={<ProductDetails />} />
         <Route path='/ViewMoreDetails/:id' element={<ViewMoreDetails />} />
         <Route path='/particularproduct/:id' element={<ParticularProduct />} />
-      
-
       </Routes>
 
+    <Footer />
     </div>
   )
 }
