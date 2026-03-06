@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom'
 
 const Footer = () => {
     const location =useLocation()
-    if(location.pathname === '/cart' || location.pathname.startsWith("/productDetails/")){
+    if(location.pathname === '/cart' || location.pathname.startsWith("/productDetails/")  || location.pathname.startsWith("/particularproduct/")){
         return null;
     }
   return (

@@ -43,7 +43,6 @@ import WDress18 from "./WomenDress.jsx/WDress18.jpg"
 import WDress19 from "./WomenDress.jsx/WDress19.avif"
 import WDress20 from "./WomenDress.jsx/WDress20.avif"
 
-
 // --------------------------------------------------------Men Dress--------------------------------------------------
 
 import MDress1 from "./MenDress.jsx/MDress1.avif"
@@ -68,228 +67,11 @@ import MDress19 from "./MenDress.jsx/MDress19.avif"
 import MDress20 from "./MenDress.jsx/MDress20.avif"
 
 
-
-
-
-
-
-
-
-
-
-
 export let mystore = createContext();
 
 export let ContextProvider = ({children})=>{
 
-    const[product , setProduct] = useState([
-  // {
-  //   id: 1,
-  //   category : "SmartPhone",
-  //   title: "Samsung Galaxy M14",
-  //   name: "Smartphone",
-  //   brand: "Samsung",
-  //   description: "6.6-inch display, 6000mAh battery and powerful processor for smooth performance.",
-  //   price: 12999,
-  //   oldPrice: 20400,
-  //   rating: 4.5,
-  //   stock: 18,
-  //   delivery: "Free Delivery in 2-3 Days",
-  //   features: [
-  //     "6000mAh Battery , ",
-  //     "6.6-inch FHD+ Display",
-  //     "5G Support",
-  //     "128GB Storage"
-  //   ],
-  //   image: smartMobile
-  // },
-  // {
-  //   id: 2,
-  //   category : "SmartPhone",
-  //   title: "Nokia 105 Classic",
-  //   name: "Keypad Phone",
-  //   brand: "Nokia",
-  //   description: "Long-lasting battery with durable design and clear sound quality.",
-  //   price: 999,
-  //   oldPrice: 1599,
-  //   rating: 4.2,
-  //   stock: 35,
-  //   delivery: "Free Delivery in 4-5 Days",
-  //   features: [
-  //     "Long Battery Life , ",
-  //     "Dual SIM , ",
-  //     "Durable Body , ",
-  //     "FM Radio."
-  //   ],
-  //   image: keypad
-  // },
-  // {
-  //   id: 3,
-  //   category : "Sm",
-  //   title: "Boat Rockerz 450",
-  //   name: "Headphones",
-  //   brand: "Boat",
-  //   description: "Wireless over-ear headphones with deep bass and 15 hours playback.",
-  //   price: 2999,
-  //   oldPrice: 5999,
-  //   rating: 4.6,
-  //   stock: 22,
-  //   delivery: "Free Delivery in 2 Days",
-  //   features: [
-  //     "15 Hours Playback , ",
-  //     "Deep Bass , ",
-  //     "Bluetooth 5.0 , ",
-  //     "Lightweight Design."
-  //   ],
-  //   image: Headset
-  // },
-  // {
-  //   id: 4,
-  //   category : "Sm",
-  //   title: "Noise ColorFit Pro",
-  //   name: "Smart Watch",
-  //   brand: "Noise",
-  //   description: "Feature-packed smart watch designed to keep up with your active lifestyle.",
-  //   price: 4999,
-  //   oldPrice: 7999,
-  //   rating: 4.3,
-  //   stock: 12,
-  //   delivery: "Free Delivery Tomorrow",
-  //   features: [
-  //     "Heart Rate Monitor , ",
-  //     "Sleep Tracking , ",
-  //     "IP68 Water Resistant , ",
-  //     "7 Days Battery."
-  //   ],
-  //   image: Smartwatch
-  // },
-  // {
-  //   id: 5,
-  //   category : "Sm",
-
-  //   title: "JBL Flip 5",
-  //   name: "Bluetooth Speaker",
-  //   brand: "JBL",
-  //   description: "Portable speaker with powerful bass and waterproof design.",
-  //   price: 1999,
-  //   oldPrice: 2500,
-  //   rating: 4.4,
-  //   stock: 20,
-  //   delivery: "Free Delivery in 3 Days",
-  //   features: [
-  //     "Powerful Bass , ",
-  //     "Waterproof , ",
-  //     "12 Hours Playtime , ",
-  //     "Portable Design."
-  //   ],
-  //   image: Bluetoothspeaker
-  // },
-  // {
-  //   id: 6,
-  //   category : "Sm",
-
-  //   title: "Lenovo Tab M10",
-  //   name: "Tablet",
-  //   brand: "Lenovo",
-  //   description: "10.1-inch display tablet perfect for entertainment and productivity.",
-  //   price: 18999,
-  //   oldPrice: 20999,
-  //   rating: 4.1,
-  //   stock: 9,
-  //   delivery: "Free Delivery in 5 Days",
-  //   features: [
-  //     "10.1-inch Display , ",
-  //     "4GB RAM , ",
-  //     "Long Battery Life , ",
-  //     "Dolby Audio."
-  //   ],
-  //   image: Tablet
-  // },
-  // {
-  //   id: 7,
-  //   category : "Sm",
-
-  //   title: "Logitech Mechanical Keyboard",
-  //   name: "Keyboard",
-  //   brand: "Logitech",
-  //   description: "RGB backlit keyboard with smooth typing experience.",
-  //   price: 1499,
-  //   oldPrice: 2000,
-  //   rating: 4.5,
-  //   stock: 28,
-  //   delivery: "Free Delivery in 2 Days",
-  //   features: [
-  //     "RGB Lighting , ",
-  //     "Mechanical Keys , ",
-  //     "Anti-Ghosting , ",
-  //     "Durable Build."
-  //   ],
-  //   image: Keyboard
-  // },
-  // {
-  //   id: 8,
-  //   category : "Sm",
-
-  //   title: "HP Wireless Mouse",
-  //   name: "Mouse",
-  //   brand: "HP",
-  //   description: "Ergonomic wireless mouse with high precision tracking.",
-  //   price: 799,
-  //   oldPrice: 1599,
-  //   rating: 4.2,
-  //   stock: 40,
-  //   delivery: "Free Delivery in 3 Days",
-  //   features: [
-  //     "Wireless Connectivity , ",
-  //     "Ergonomic Design , ",
-  //     "High Precision , ",
-  //     "Long Battery Life."
-  //   ],
-  //   image: Mouse
-  // },
-  // {
-  //   id: 9,
-  //   category : "Sm",
-
-  //   title: "Sony PlayStation 5",
-  //   name: "Gaming Console",
-  //   brand: "Sony",
-  //   description: "Next-gen gaming console with ultra-fast SSD and stunning graphics.",
-  //   price: 39999,
-  //   oldPrice: 45499,
-  //   rating: 4.8,
-  //   stock: 5,
-  //   delivery: "Express Delivery Available",
-  //   features: [
-  //     "Ultra-fast SSD , ",
-  //     "4K Gaming , ",
-  //     "Ray Tracing , ",
-  //     "DualSense Controller."
-  //   ],
-  //   image: Gamingconsole
-  // },
-  // {
-  //   id: 10,
-  //   category : "Sm",
-
-  //   title: "Canon EOS 1500D",
-  //   name: "Camera",
-  //   brand: "Canon",
-  //   description: "24.1MP DSLR camera with high-quality image capture and WiFi support.",
-  //   price: 25999,
-  //   oldPrice: 30400,
-  //   rating: 4.6,
-  //   stock: 7,
-  //   delivery: "Free Delivery in 4 Days",
-  //   features: [
-  //     "24.1MP Sensor , ",
-  //     "WiFi Support , ",
-  //     "Full HD Recording , ",
-  //     "Interchangeable Lens ."
-  //   ],
-  //   image: Camera
-  // },
-  ])
+    const[product , setProduct] = useState([])
    
     const [cart , setCart] = useState(()=>{
       let cartItem = localStorage.getItem("cart")
@@ -310,7 +92,6 @@ export let ContextProvider = ({children})=>{
         image2: WomenDress2,
         image3: WomenDress3,
         image4: WomenDress4,
-        name:"prerna",
       }, 
       {
         id:2,
@@ -318,7 +99,6 @@ export let ContextProvider = ({children})=>{
         image2: MenDress2,
         image3: MenDress3,
         image4: MenDress4,
-        name:"usha",
       },
        {
         id:3,
@@ -326,7 +106,6 @@ export let ContextProvider = ({children})=>{
         image2:HomeDecor,
         image3:Mouse,
         image4:KidDress1,
-        name:"isha",
       }
 
     ])
@@ -334,317 +113,1019 @@ export let ContextProvider = ({children})=>{
     const [viewMoreData , setViewMoreData] = useState([
       {
         id:1,
-        name:"raamu",
-        class:2,
+        name:"womens",
         products:[
          {
-    id: 101,
-    name: "Floral Summer Dress",
-    image:WDress1 ,
-    oldPrice: 1299,
-    price: 899,
-  },
+           id: 101,
+           category: "Women",
+           title: "Floral Summer Dress", 
+           name: "Dress", brand: "Zara", 
+           description: "Lightweight floral dress perfect for summer outings.", 
+           price: 899, 
+           oldPrice: 1299, 
+           rating: 4.5, 
+           stock: 12, 
+           delivery: "Free Delivery in 3 Days",
+           features: [ "Soft Cotton Fabric", 
+                         "Floral Print Design",
+                         "Breathable Material", 
+                         "Comfortable Fit" ], 
+          image: WDress1 },
   {
-    id: 102,
-    name: "Party Wear Gown",
-    image: WDress2,
-    oldPrice: 2499,
-    price: 1799,
-  },
-  {
-    id: 103,
-    name: "Casual Cotton Kurti",
-    image: WDress3,
-    oldPrice: 999,
-    price: 699,
-  },
-  {
-    id: 104,
-    name: "Denim Midi Dress",
-    image: WDress4,
-    oldPrice: 1899,
-    price: 1399,
-  },
-  {
-    id: 105,
-    name: "Ethnic Anarkali Suit",
-    image: WDress5,
-    oldPrice: 2999,
-    price: 2199,
-  },
-  {
-    id: 106,
-    name: "Printed Maxi Dress",
-    image: WDress6,
-    oldPrice: 1599,
-    price: 1099,
-  },
-  {
-    id: 107,
-    name: "Sleeveless Bodycon Dress",
-    image: WDress7,
-    oldPrice: 1999,
-    price: 1499,
-  },
-  {
-    id: 108,
-    name: "Traditional Lehenga",
-    image: WDress8,
-    oldPrice: 4999,
-    price: 3799,
-  },
-  {
-    id: 109,
-    name: "Office Wear Formal Dress",
-    image: WDress9,
-    oldPrice: 1799,
-    price: 1299,
-  },
-  {
-    id: 110,
-    name: "Stylish Skater Dress",
-    image: WDress10,
-    oldPrice: 1499,
-    price: 999,
-  },
-  {
-    id: 111,
-    name: "Long Sleeve Winter Dress",
-    image: WDress11,
-    oldPrice: 2299,
-    price: 1699,
-  },
-  {
-    id: 112,
-    name: "Chiffon Saree",
-    image: WDress12,
-    oldPrice: 2599,
-    price: 1899,
-  },
-  {
-    id: 113,
-    name: "Boho Style Dress",
-    image: WDress13,
-    oldPrice: 1399,
-    price: 999,
-  },
-  {
-    id: 114,
-    name: "Designer Party Kurti",
-    image: WDress14,
-    oldPrice: 1899,
-    price: 1399,
-  },
-  {
-    id: 115,
-    name: "Elegant Evening Gown",
-    image: WDress15,
-    oldPrice: 3499,
-    price: 2599,
-  },
-  {
-    id: 116,
-    name: "Embroidered Festive Suit",
-    image: WDress16,
-    oldPrice: 2799,
-    price: 1999,
-  },
-  {
-    id: 117,
-    name: "A-Line Casual Dress",
-    image: WDress17,
-    oldPrice: 1599,
-    price: 1199,
-  },
-  {
-    id: 118,
-    name: "Georgette Party Saree",
-    image: WDress18,
-    oldPrice: 3199,
-    price: 2399,
-  },
-  {
-    id: 119,
-    name: "Layered Ruffle Dress",
-    image: WDress19,
-    oldPrice: 1799,
-    price: 1299,
-  },
-  {
-    id: 120,
-    name: "Wedding Special Lehenga",
-    image: WDress20,
-    oldPrice: 5999,
-    price: 4599,
-  }
+  id: 102,
+  category: "Women",
+  title: "Party Wear Gown",
+  name: "Gown",
+  brand: "Forever 21",
+  description: "Stylish party gown designed for evening events.",
+  price: 1799,
+  oldPrice: 2499,
+  rating: 4.6,
+  stock: 9,
+  delivery: "Free Delivery in 4 Days",
+  features: [
+    "Premium Fabric",
+    "Elegant Party Design",
+    "Slim Fit Style",
+    "Perfect for Occasions"
+  ],
+  image: WDress2
+},
+{
+  id: 103,
+  category: "Women",
+  title: "Casual Cotton Kurti",
+  name: "Kurti",
+  brand: "Biba",
+  description: "Comfortable cotton kurti ideal for daily wear.",
+  price: 699,
+  oldPrice: 999,
+  rating: 4.4,
+  stock: 15,
+  delivery: "Free Delivery in 3 Days",
+  features: [
+    "Pure Cotton Fabric",
+    "Traditional Pattern",
+    "Breathable Material",
+    "Perfect Daily Wear"
+  ],
+  image: WDress3
+},
+{
+  id: 104,
+  category: "Women",
+  title: "Denim Midi Dress",
+  name: "Dress",
+  brand: "Levis",
+  description: "Trendy denim midi dress suitable for casual styling.",
+  price: 1399,
+  oldPrice: 1899,
+  rating: 4.5,
+  stock: 10,
+  delivery: "Free Delivery in 3 Days",
+  features: [
+    "Durable Denim Fabric",
+    "Stylish Midi Length",
+    "Casual Look",
+    "Comfortable Fit"
+  ],
+  image: WDress4
+},
+{
+  id: 105,
+  category: "Women",
+  title: "Ethnic Anarkali Suit",
+  name: "Anarkali Suit",
+  brand: "Libas",
+  description: "Elegant ethnic Anarkali suit for festive occasions.",
+  price: 2199,
+  oldPrice: 2999,
+  rating: 4.7,
+  stock: 7,
+  delivery: "Free Delivery in 4 Days",
+  features: [
+    "Traditional Design",
+    "Festive Wear",
+    "Soft Fabric",
+    "Elegant Look"
+  ],
+  image: WDress5
+},
+{
+  id: 106,
+  category: "Women",
+  title: "Printed Maxi Dress",
+  name: "Dress",
+  brand: "H&M",
+  description: "Stylish printed maxi dress perfect for vacations.",
+  price: 1099,
+  oldPrice: 1599,
+  rating: 4.3,
+  stock: 11,
+  delivery: "Free Delivery in 3 Days",
+  features: [
+    "Long Maxi Style",
+    "Trendy Prints",
+    "Comfortable Fabric",
+    "Relaxed Fit"
+  ],
+  image: WDress6
+},
+{
+  id: 107,
+  category: "Women",
+  title: "Sleeveless Bodycon Dress",
+  name: "Dress",
+  brand: "Zara",
+  description: "Stylish bodycon dress that enhances your silhouette.",
+  price: 1499,
+  oldPrice: 1999,
+  rating: 4.6,
+  stock: 8,
+  delivery: "Free Delivery in 3 Days",
+  features: [
+    "Bodycon Fit",
+    "Stretchable Fabric",
+    "Sleeveless Design",
+    "Modern Look"
+  ],
+  image: WDress7
+},
+{
+  id: 108,
+  category: "Women",
+  title: "Traditional Lehenga",
+  name: "Lehenga",
+  brand: "Manyavar",
+  description: "Beautiful traditional lehenga suitable for weddings.",
+  price: 3799,
+  oldPrice: 4999,
+  rating: 4.8,
+  stock: 5,
+  delivery: "Free Delivery in 5 Days",
+  features: [
+    "Rich Embroidery",
+    "Festive Wear",
+    "Premium Fabric",
+    "Elegant Bridal Style"
+  ],
+  image: WDress8
+},
+{
+  id: 109,
+  category: "Women",
+  title: "Office Wear Formal Dress",
+  name: "Dress",
+  brand: "Allen Solly",
+  description: "Professional formal dress perfect for office wear.",
+  price: 1299,
+  oldPrice: 1799,
+  rating: 4.4,
+  stock: 13,
+  delivery: "Free Delivery in 3 Days",
+  features: [
+    "Formal Style",
+    "Elegant Fit",
+    "Soft Fabric",
+    "Professional Look"
+  ],
+  image: WDress9
+},
+{
+  id: 110,
+  category: "Women",
+  title: "Stylish Skater Dress",
+  name: "Dress",
+  brand: "Forever 21",
+  description: "Trendy skater dress ideal for casual outings.",
+  price: 999,
+  oldPrice: 1499,
+  rating: 4.3,
+  stock: 14,
+  delivery: "Free Delivery in 3 Days",
+  features: [
+    "Skater Style",
+    "Lightweight Fabric",
+    "Modern Design",
+    "Comfortable Wear"
+  ],
+  image: WDress10
+},
+{
+  id: 111,
+  category: "Women",
+  title: "Long Sleeve Winter Dress",
+  name: "Dress",
+  brand: "H&M",
+  description: "Warm winter dress designed for colder seasons.",
+  price: 1699,
+  oldPrice: 2299,
+  rating: 4.5,
+  stock: 9,
+  delivery: "Free Delivery in 4 Days",
+  features: [
+    "Warm Fabric",
+    "Long Sleeve Design",
+    "Winter Friendly",
+    "Stylish Look"
+  ],
+  image: WDress11
+},
+{
+  id: 112,
+  category: "Women",
+  title: "Chiffon Saree",
+  name: "Saree",
+  brand: "Sabyasachi",
+  description: "Elegant chiffon saree with graceful drape.",
+  price: 1899,
+  oldPrice: 2599,
+  rating: 4.6,
+  stock: 7,
+  delivery: "Free Delivery in 4 Days",
+  features: [
+    "Lightweight Chiffon",
+    "Elegant Design",
+    "Festive Wear",
+    "Comfortable Draping"
+  ],
+  image: WDress12
+},
+{
+  id: 113,
+  category: "Women",
+  title: "Boho Style Dress",
+  name: "Dress",
+  brand: "Zara",
+  description: "Trendy boho dress with relaxed styling.",
+  price: 999,
+  oldPrice: 1399,
+  rating: 4.4,
+  stock: 10,
+  delivery: "Free Delivery in 3 Days",
+  features: [
+    "Boho Design",
+    "Relaxed Fit",
+    "Soft Fabric",
+    "Casual Look"
+  ],
+  image: WDress13
+},
+{
+  id: 114,
+  category: "Women",
+  title: "Designer Party Kurti",
+  name: "Kurti",
+  brand: "Biba",
+  description: "Stylish designer kurti perfect for festive parties.",
+  price: 1399,
+  oldPrice: 1899,
+  rating: 4.5,
+  stock: 11,
+  delivery: "Free Delivery in 3 Days",
+  features: [
+    "Designer Pattern",
+    "Festive Wear",
+    "Comfortable Fabric",
+    "Elegant Look"
+  ],
+  image: WDress14
+},
+{
+  id: 115,
+  category: "Women",
+  title: "Elegant Evening Gown",
+  name: "Gown",
+  brand: "Forever 21",
+  description: "Sophisticated evening gown for formal events.",
+  price: 2599,
+  oldPrice: 3499,
+  rating: 4.7,
+  stock: 6,
+  delivery: "Free Delivery in 4 Days",
+  features: [
+    "Luxury Fabric",
+    "Elegant Fit",
+    "Party Ready",
+    "Premium Style"
+  ],
+  image: WDress15
+},
+{
+  id: 116,
+  category: "Women",
+  title: "Embroidered Festive Suit",
+  name: "Suit",
+  brand: "Libas",
+  description: "Festive suit with beautiful embroidery work.",
+  price: 1999,
+  oldPrice: 2799,
+  rating: 4.6,
+  stock: 8,
+  delivery: "Free Delivery in 4 Days",
+  features: [
+    "Embroidery Work",
+    "Festive Design",
+    "Comfortable Fabric",
+    "Elegant Look"
+  ],
+  image: WDress16
+},
+{
+  id: 117,
+  category: "Women",
+  title: "A-Line Casual Dress",
+  name: "Dress",
+  brand: "H&M",
+  description: "Simple A-line dress perfect for daily casual wear.",
+  price: 1199,
+  oldPrice: 1599,
+  rating: 4.3,
+  stock: 12,
+  delivery: "Free Delivery in 3 Days",
+  features: [
+    "A-Line Shape",
+    "Casual Style",
+    "Soft Fabric",
+    "Comfortable Fit"
+  ],
+  image: WDress17
+},
+{
+  id: 118,
+  category: "Women",
+  title: "Georgette Party Saree",
+  name: "Saree",
+  brand: "Manyavar",
+  description: "Stylish georgette saree designed for parties.",
+  price: 2399,
+  oldPrice: 3199,
+  rating: 4.5,
+  stock: 7,
+  delivery: "Free Delivery in 4 Days",
+  features: [
+    "Georgette Fabric",
+    "Elegant Design",
+    "Party Wear",
+    "Lightweight"
+  ],
+  image: WDress18
+},
+{
+  id: 119,
+  category: "Women",
+  title: "Layered Ruffle Dress",
+  name: "Dress",
+  brand: "Zara",
+  description: "Trendy ruffle dress with layered styling.",
+  price: 1299,
+  oldPrice: 1799,
+  rating: 4.4,
+  stock: 10,
+  delivery: "Free Delivery in 3 Days",
+  features: [
+    "Layered Design",
+    "Modern Style",
+    "Comfortable Fabric",
+    "Casual Wear"
+  ],
+  image: WDress19
+},
+{
+  id: 120,
+  category: "Women",
+  title: "Wedding Special Lehenga",
+  name: "Lehenga",
+  brand: "Sabyasachi",
+  description: "Premium bridal lehenga designed for weddings.",
+  price: 4599,
+  oldPrice: 5999,
+  rating: 4.9,
+  stock: 4,
+  delivery: "Free Delivery in 5 Days",
+  features: [
+    "Bridal Design",
+    "Rich Embroidery",
+    "Premium Fabric",
+    "Luxury Look"
+  ],
+  image: WDress20
+}
         ]
       },
       {
         id:2,
-        name:"rajju",
-        class:5,
+        name:"mens",
         products:[
           {
-      id: 201,
-      name: "Casual Cotton Shirt",
-      image: MDress1,
-      oldPrice: 1299,
-      price: 899,
-    },
-    {
-      id: 202,
-      name: "Slim Fit Jeans",
-      image: MDress2,
-      oldPrice: 2499,
-      price: 1799,
-    },
-    {
-      id: 203,
-      name: "Formal Blazer",
-      image: MDress3,
-      oldPrice: 3999,
-      price: 2999,
-    },
-    {
-      id: 204,
-      name: "Printed T-Shirt",
-      image: MDress4,
-      oldPrice: 999,
-      price: 699,
-    },
-    {
-      id: 205,
-      name: "Traditional Kurta",
-      image: MDress5,
-      oldPrice: 1599,
-      price: 1199,
-    },
-    {
-      id: 206,
-      name: "Denim Jacket",
-      image: MDress6,
-      oldPrice: 2999,
-      price: 2199,
-    },
-    {
-      id: 207,
-      name: "Sports Track Suit",
-      image: MDress7,
-      oldPrice: 1999,
-      price: 1499,
-    },
-    {
-      id: 208,
-      name: "Winter Hoodie",
-      image: MDress8,
-      oldPrice: 1799,
-      price: 1299,
-    },
-    {
-      id: 209,
-      name: "Party Wear Suit",
-      image: MDress9,
-      oldPrice: 4999,
-      price: 3799,
-    },
-    {
-      id: 210,
-      name: "Casual Shorts",
-      image: MDress10,
-      oldPrice: 899,
-      price: 599,
-    },
-    {
-      id: 211,
-      name: "Formal Trousers",
-      image: MDress11,
-      oldPrice: 1899,
-      price: 1399,
-    },
-    {
-      id: 212,
-      name: "Graphic T-Shirt",
-      image: MDress12,
-      oldPrice: 1099,
-      price: 799,
-    },
-    {
-      id: 213,
-      name: "Leather Jacket",
-      image: MDress13,
-      oldPrice: 5999,
-      price: 4599,
-    },
-    {
-      id: 214,
-      name: "Ethnic Sherwani",
-      image: MDress14,
-      oldPrice: 6999,
-      price: 5499,
-    },
-    {
-      id: 215,
-      name: "Summer Linen Shirt",
-      image: MDress15,
-      oldPrice: 1399,
-      price: 999,
-    },
-    {
-      id: 216,
-      name: "Jogger Pants",
-      image: MDress16,
-      oldPrice: 1499,
-      price: 1099,
-    },
-    {
-      id: 217,
-      name: "Classic Polo T-Shirt",
-      image: MDress17,
-      oldPrice: 1299,
-      price: 899,
-    },
-    {
-      id: 218,
-      name: "Denim Cargo Pants",
-      image: MDress18,
-      oldPrice: 2299,
-      price: 1699,
-    },
-    {
-      id: 219,
-      name: "Wedding Special Suit",
-      image: MDress19,
-      oldPrice: 7999,
-      price: 6299,
-    },
-    {
-      id: 220,
-      name: "Basic White Shirt",
-      image: MDress20,
-      oldPrice: 1199,
-      price: 799,
-    }
+  id: 201,
+  category: "Men",
+  title: "Casual Cotton Shirt",
+  name: "Shirt",
+  brand: "Levis",
+  description: "Comfortable cotton shirt perfect for everyday casual wear.",
+  price: 899,
+  oldPrice: 1299,
+  rating: 4.4,
+  stock: 12,
+  delivery: "Free Delivery in 3 Days",
+  features: [
+    "Pure Cotton Fabric",
+    "Breathable Material",
+    "Regular Fit",
+    "Comfortable Wear"
+  ],
+  image: MDress1
+},
+{
+  id: 202,
+  category: "Men",
+  title: "Slim Fit Jeans",
+  name: "Jeans",
+  brand: "Wrangler",
+  description: "Stylish slim fit jeans designed for a modern look.",
+  price: 1799,
+  oldPrice: 2499,
+  rating: 4.5,
+  stock: 10,
+  delivery: "Free Delivery in 3 Days",
+  features: [
+    "Slim Fit Design",
+    "Durable Denim Fabric",
+    "Modern Style",
+    "Comfort Stretch"
+  ],
+  image: MDress2
+},
+{
+  id: 203,
+  category: "Men",
+  title: "Formal Blazer",
+  name: "Blazer",
+  brand: "Allen Solly",
+  description: "Elegant formal blazer suitable for meetings and events.",
+  price: 2999,
+  oldPrice: 3999,
+  rating: 4.6,
+  stock: 7,
+  delivery: "Free Delivery in 4 Days",
+  features: [
+    "Premium Fabric",
+    "Formal Design",
+    "Slim Fit",
+    "Professional Look"
+  ],
+  image: MDress3
+},
+{
+  id: 204,
+  category: "Men",
+  title: "Printed T-Shirt",
+  name: "T-Shirt",
+  brand: "H&M",
+  description: "Trendy printed t-shirt perfect for casual outings.",
+  price: 699,
+  oldPrice: 999,
+  rating: 4.3,
+  stock: 15,
+  delivery: "Free Delivery in 3 Days",
+  features: [
+    "Soft Cotton Fabric",
+    "Stylish Print",
+    "Lightweight",
+    "Casual Wear"
+  ],
+  image: MDress4
+},
+{
+  id: 205,
+  category: "Men",
+  title: "Traditional Kurta",
+  name: "Kurta",
+  brand: "Manyavar",
+  description: "Elegant traditional kurta suitable for festive occasions.",
+  price: 1199,
+  oldPrice: 1599,
+  rating: 4.5,
+  stock: 9,
+  delivery: "Free Delivery in 4 Days",
+  features: [
+    "Ethnic Design",
+    "Comfortable Fabric",
+    "Festive Wear",
+    "Traditional Style"
+  ],
+  image: MDress5
+},
+{
+  id: 206,
+  category: "Men",
+  title: "Denim Jacket",
+  name: "Jacket",
+  brand: "Levis",
+  description: "Stylish denim jacket for a rugged casual look.",
+  price: 2199,
+  oldPrice: 2999,
+  rating: 4.6,
+  stock: 8,
+  delivery: "Free Delivery in 4 Days",
+  features: [
+    "Durable Denim",
+    "Classic Style",
+    "Comfort Fit",
+    "All Season Wear"
+  ],
+  image: MDress6
+},
+{
+  id: 207,
+  category: "Men",
+  title: "Sports Track Suit",
+  name: "Track Suit",
+  brand: "Nike",
+  description: "Comfortable track suit designed for sports and workouts.",
+  price: 1499,
+  oldPrice: 1999,
+  rating: 4.4,
+  stock: 11,
+  delivery: "Free Delivery in 3 Days",
+  features: [
+    "Sports Fabric",
+    "Flexible Material",
+    "Athletic Fit",
+    "Workout Friendly"
+  ],
+  image: MDress7
+},
+{
+  id: 208,
+  category: "Men",
+  title: "Winter Hoodie",
+  name: "Hoodie",
+  brand: "Adidas",
+  description: "Warm hoodie designed for winter comfort.",
+  price: 1299,
+  oldPrice: 1799,
+  rating: 4.5,
+  stock: 10,
+  delivery: "Free Delivery in 3 Days",
+  features: [
+    "Warm Fabric",
+    "Hooded Design",
+    "Casual Style",
+    "Winter Wear"
+  ],
+  image: MDress8
+},
+{
+  id: 209,
+  category: "Men",
+  title: "Party Wear Suit",
+  name: "Suit",
+  brand: "Raymond",
+  description: "Premium party wear suit for formal events.",
+  price: 3799,
+  oldPrice: 4999,
+  rating: 4.7,
+  stock: 6,
+  delivery: "Free Delivery in 5 Days",
+  features: [
+    "Premium Fabric",
+    "Elegant Fit",
+    "Formal Design",
+    "Luxury Look"
+  ],
+  image: MDress9
+},
+{
+  id: 210,
+  category: "Men",
+  title: "Casual Shorts",
+  name: "Shorts",
+  brand: "Puma",
+  description: "Lightweight casual shorts perfect for summer.",
+  price: 599,
+  oldPrice: 899,
+  rating: 4.2,
+  stock: 14,
+  delivery: "Free Delivery in 3 Days",
+  features: [
+    "Lightweight Fabric",
+    "Relaxed Fit",
+    "Summer Wear",
+    "Comfortable Style"
+  ],
+  image: MDress10
+},
+{
+  id: 211,
+  category: "Men",
+  title: "Formal Trousers",
+  name: "Trousers",
+  brand: "Allen Solly",
+  description: "Professional formal trousers for office wear.",
+  price: 1399,
+  oldPrice: 1899,
+  rating: 4.4,
+  stock: 10,
+  delivery: "Free Delivery in 3 Days",
+  features: [
+    "Formal Style",
+    "Slim Fit",
+    "Soft Fabric",
+    "Office Wear"
+  ],
+  image: MDress11
+},
+{
+  id: 212,
+  category: "Men",
+  title: "Graphic T-Shirt",
+  name: "T-Shirt",
+  brand: "H&M",
+  description: "Trendy graphic t-shirt with modern design.",
+  price: 799,
+  oldPrice: 1099,
+  rating: 4.3,
+  stock: 13,
+  delivery: "Free Delivery in 3 Days",
+  features: [
+    "Graphic Print",
+    "Soft Cotton",
+    "Casual Style",
+    "Comfort Fit"
+  ],
+  image: MDress12
+},
+{
+  id: 213,
+  category: "Men",
+  title: "Leather Jacket",
+  name: "Jacket",
+  brand: "Zara",
+  description: "Premium leather jacket for a bold stylish look.",
+  price: 4599,
+  oldPrice: 5999,
+  rating: 4.7,
+  stock: 5,
+  delivery: "Free Delivery in 5 Days",
+  features: [
+    "Genuine Leather",
+    "Stylish Design",
+    "Winter Wear",
+    "Premium Look"
+  ],
+  image: MDress13
+},
+{
+  id: 214,
+  category: "Men",
+  title: "Ethnic Sherwani",
+  name: "Sherwani",
+  brand: "Manyavar",
+  description: "Traditional sherwani perfect for weddings.",
+  price: 5499,
+  oldPrice: 6999,
+  rating: 4.8,
+  stock: 4,
+  delivery: "Free Delivery in 5 Days",
+  features: [
+    "Rich Embroidery",
+    "Wedding Wear",
+    "Premium Fabric",
+    "Traditional Style"
+  ],
+  image: MDress14
+},
+{
+  id: 215,
+  category: "Men",
+  title: "Summer Linen Shirt",
+  name: "Shirt",
+  brand: "Zara",
+  description: "Breathable linen shirt perfect for summer days.",
+  price: 999,
+  oldPrice: 1399,
+  rating: 4.4,
+  stock: 12,
+  delivery: "Free Delivery in 3 Days",
+  features: [
+    "Linen Fabric",
+    "Breathable Material",
+    "Summer Friendly",
+    "Comfort Fit"
+  ],
+  image: MDress15
+},
+{
+  id: 216,
+  category: "Men",
+  title: "Jogger Pants",
+  name: "Joggers",
+  brand: "Nike",
+  description: "Comfortable jogger pants suitable for casual wear.",
+  price: 1099,
+  oldPrice: 1499,
+  rating: 4.3,
+  stock: 11,
+  delivery: "Free Delivery in 3 Days",
+  features: [
+    "Elastic Waist",
+    "Comfort Fit",
+    "Casual Style",
+    "Soft Fabric"
+  ],
+  image: MDress16
+},
+{
+  id: 217,
+  category: "Men",
+  title: "Classic Polo T-Shirt",
+  name: "Polo T-Shirt",
+  brand: "Puma",
+  description: "Classic polo t-shirt with elegant casual style.",
+  price: 899,
+  oldPrice: 1299,
+  rating: 4.5,
+  stock: 13,
+  delivery: "Free Delivery in 3 Days",
+  features: [
+    "Polo Collar",
+    "Soft Cotton",
+    "Elegant Casual Wear",
+    "Comfort Fit"
+  ],
+  image: MDress17
+},
+{
+  id: 218,
+  category: "Men",
+  title: "Denim Cargo Pants",
+  name: "Cargo Pants",
+  brand: "Wrangler",
+  description: "Stylish cargo pants with multiple pockets.",
+  price: 1699,
+  oldPrice: 2299,
+  rating: 4.4,
+  stock: 9,
+  delivery: "Free Delivery in 3 Days",
+  features: [
+    "Multiple Pockets",
+    "Durable Denim",
+    "Casual Style",
+    "Comfort Fit"
+  ],
+  image: MDress18
+},
+{
+  id: 219,
+  category: "Men",
+  title: "Wedding Special Suit",
+  name: "Suit",
+  brand: "Raymond",
+  description: "Luxury wedding suit designed for special occasions.",
+  price: 6299,
+  oldPrice: 7999,
+  rating: 4.8,
+  stock: 4,
+  delivery: "Free Delivery in 5 Days",
+  features: [
+    "Premium Fabric",
+    "Wedding Wear",
+    "Elegant Fit",
+    "Luxury Look"
+  ],
+  image: MDress19
+},
+{
+  id: 220,
+  category: "Men",
+  title: "Basic White Shirt",
+  name: "Shirt",
+  brand: "H&M",
+  description: "Classic white shirt suitable for formal and casual wear.",
+  price: 799,
+  oldPrice: 1199,
+  rating: 4.4,
+  stock: 14,
+  delivery: "Free Delivery in 3 Days",
+  features: [
+    "Classic White Design",
+    "Soft Cotton Fabric",
+    "Formal & Casual Wear",
+    "Comfort Fit"
+  ],
+  image: MDress20
+}
         ]
       },
       {
         id:3,
-        name:"shaymuuu",
-        class:9,
+        name:"items",
         products:[
           {
     id: 301,
-    name: "Layered Ruffle Dress",
-    image: WomenDress2,
-    oldPrice: 1799,
-    newPrice: 1299,
+    category : "SmartPhone",
+    title: "Samsung Galaxy M14",
+    name: "Smartphone",
+    brand: "Samsung",
+    description: "6.6-inch display, 6000mAh battery and powerful processor for smooth performance.",
+    price: 12999,
+    oldPrice: 20400,
+    rating: 4.5,
+    stock: 18,
+    delivery: "Free Delivery in 2-3 Days",
+    features: [
+      "6000mAh Battery , ",
+      "6.6-inch FHD+ Display",
+      "5G Support",
+      "128GB Storage"
+    ],
+    image: smartMobile
   },
   {
     id: 302,
-    name: "Wedding Special Lehenga",
-    image: WDress20,
+    category : "SmartPhone",
+    title: "Nokia 105 Classic",
+    name: "Keypad Phone",
+    brand: "Nokia",
+    description: "Long-lasting battery with durable design and clear sound quality.",
+    price: 999,
+    oldPrice: 1599,
+    rating: 4.2,
+    stock: 35,
+    delivery: "Free Delivery in 4-5 Days",
+    features: [
+      "Long Battery Life , ",
+      "Dual SIM , ",
+      "Durable Body , ",
+      "FM Radio."
+    ],
+    image: keypad
+  },
+  {
+    id: 303,
+    category : "Sm",
+    title: "Boat Rockerz 450",
+    name: "Headphones",
+    brand: "Boat",
+    description: "Wireless over-ear headphones with deep bass and 15 hours playback.",
+    price: 2999,
     oldPrice: 5999,
-    newPrice: 4599,
-  }
+    rating: 4.6,
+    stock: 22,
+    delivery: "Free Delivery in 2 Days",
+    features: [
+      "15 Hours Playback , ",
+      "Deep Bass , ",
+      "Bluetooth 5.0 , ",
+      "Lightweight Design."
+    ],
+    image: Headset
+  },
+  {
+    id: 304,
+    category : "Sm",
+    title: "Noise ColorFit Pro",
+    name: "Smart Watch",
+    brand: "Noise",
+    description: "Feature-packed smart watch designed to keep up with your active lifestyle.",
+    price: 4999,
+    oldPrice: 7999,
+    rating: 4.3,
+    stock: 12,
+    delivery: "Free Delivery Tomorrow",
+    features: [
+      "Heart Rate Monitor , ",
+      "Sleep Tracking , ",
+      "IP68 Water Resistant , ",
+      "7 Days Battery."
+    ],
+    image: Smartwatch
+  },
+  {
+    id: 305,
+    category : "Sm",
+
+    title: "JBL Flip 5",
+    name: "Bluetooth Speaker",
+    brand: "JBL",
+    description: "Portable speaker with powerful bass and waterproof design.",
+    price: 1999,
+    oldPrice: 2500,
+    rating: 4.4,
+    stock: 20,
+    delivery: "Free Delivery in 3 Days",
+    features: [
+      "Powerful Bass , ",
+      "Waterproof , ",
+      "12 Hours Playtime , ",
+      "Portable Design."
+    ],
+    image: Bluetoothspeaker
+  },
+  {
+    id: 306,
+    category : "Sm",
+
+    title: "Lenovo Tab M10",
+    name: "Tablet",
+    brand: "Lenovo",
+    description: "10.1-inch display tablet perfect for entertainment and productivity.",
+    price: 18999,
+    oldPrice: 20999,
+    rating: 4.1,
+    stock: 9,
+    delivery: "Free Delivery in 5 Days",
+    features: [
+      "10.1-inch Display , ",
+      "4GB RAM , ",
+      "Long Battery Life , ",
+      "Dolby Audio."
+    ],
+    image: Tablet
+  },
+  {
+    id: 307,
+    category : "Sm",
+
+    title: "Logitech Mechanical Keyboard",
+    name: "Keyboard",
+    brand: "Logitech",
+    description: "RGB backlit keyboard with smooth typing experience.",
+    price: 1499,
+    oldPrice: 2000,
+    rating: 4.5,
+    stock: 28,
+    delivery: "Free Delivery in 2 Days",
+    features: [
+      "RGB Lighting , ",
+      "Mechanical Keys , ",
+      "Anti-Ghosting , ",
+      "Durable Build."
+    ],
+    image: Keyboard
+  },
+  {
+    id: 308,
+    category : "Sm",
+    title: "HP Wireless Mouse",
+    name: "Mouse",
+    brand: "HP",
+    description: "Ergonomic wireless mouse with high precision tracking.",
+    price: 799,
+    oldPrice: 1599,
+    rating: 4.2,
+    stock: 40,
+    delivery: "Free Delivery in 3 Days",
+    features: [
+      "Wireless Connectivity , ",
+      "Ergonomic Design , ",
+      "High Precision , ",
+      "Long Battery Life."
+    ],
+    image: Mouse
+  },
+  {
+    id: 309,
+    category : "Sm",
+    title: "Sony PlayStation 5",
+    name: "Gaming Console",
+    brand: "Sony",
+    description: "Next-gen gaming console with ultra-fast SSD and stunning graphics.",
+    price: 39999,
+    oldPrice: 45499,
+    rating: 4.8,
+    stock: 5,
+    delivery: "Express Delivery Available",
+    features: [
+      "Ultra-fast SSD , ",
+      "4K Gaming , ",
+      "Ray Tracing , ",
+      "DualSense Controller."
+    ],
+    image: Gamingconsole
+  },
+  {
+    id: 310,
+    category : "Sm",
+    title: "Canon EOS 1500D",
+    name: "Camera",
+    brand: "Canon",
+    description: "24.1MP DSLR camera with high-quality image capture and WiFi support.",
+    price: 25999,
+    oldPrice: 30400,
+    rating: 4.6,
+    stock: 7,
+    delivery: "Free Delivery in 4 Days",
+    features: [
+      "24.1MP Sensor , ",
+      "WiFi Support , ",
+      "Full HD Recording , ",
+      "Interchangeable Lens ."
+    ],
+    image: Camera
+  },
         ]
       },
     ])

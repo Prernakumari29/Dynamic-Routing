@@ -19,7 +19,7 @@ const ViewMoreDetails = () => {
 
     <>
     
-      <i className="ri-arrow-left-line  text-4xl cursor-pointer hover:bg-gray-100 rounded-full ml-2 " onClick={()=> navigate(-1)}></i> 
+      <i className="ri-arrow-left-line   text-4xl cursor-pointer hover:bg-gray-100 rounded-full ml-2 " onClick={()=> navigate(-1)}></i> 
       
     <SalesAnnimation />
     
@@ -32,7 +32,7 @@ const ViewMoreDetails = () => {
             <div className='h-80 w-56 hover:bg-gray-100 p-3 rounded '> 
             
             <div className='h-48 w-full rounded' onClick={()=> navigate(`/particularproduct/${elem.id}`)}>
-              <img src={elem.image} alt="image hai" className='h-full w-full object-cover'/>
+              <img src={elem.image} alt="image hai" className='h-full w-full object-cover cursor-pointer'/>
             </div>
 
             <h1 className='mt-4'>{elem.name}</h1>
