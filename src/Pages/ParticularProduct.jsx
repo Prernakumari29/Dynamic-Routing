@@ -1,10 +1,11 @@
 import React, { useContext } from 'react'
-import { useLocation, useParams } from 'react-router-dom'
+import { useLocation, useNavigate, useParams } from 'react-router-dom'
 import { mystore } from '../contextAPI'
 
 const ParticularProduct = () => {
     let {id} = useParams()
     let{viewMoreData ,  cart , setCart} = useContext(mystore)
+    let navigate = useNavigate()
 
     const handlecart = (data)=>{
       setCart((prev) => [...prev ,data ])
@@ -20,7 +21,8 @@ const ParticularProduct = () => {
     let single = parent.products.find((u) => u.id == id)
   return (
 <div className='p-20 pl-26 '>
-      <h1 className='text-3xl pb-6 '>{single.name} <span className='text-gray-400 text-2xl'>({single.title})</span></h1>
+      
+      <h1 className='text-3xl pb-6 font-serif'><i className="ri-arrow-left-line cursor-pointer rounded-full hover:bg-gray-100 " onClick={()=>navigate(-1)}></i>  {single.name} <span className='text-gray-400 text-2xl'>({single.title})</span></h1>
 
   <div className='flex gap-5'>
           <img src={single.image} alt="" className='h-96 w-96 object-cover '/>     
@@ -39,7 +41,7 @@ const ParticularProduct = () => {
               <h3>{single.title}</h3>
                <h1 className='text-red-600 '><span className='text-black line-through'>₹{single.price}</span> <span className='text-2xl'>₹ {single.price} </span> </h1>
             </div>
-            <button className='bg-cyan-900 text-white p-2 rounded mt-3 active:scale-90 font-bold cursor-pointer' onClick={()=>handlecart(single.id)}>Add to cart</button>         
+            <button className='bg-cyan-900 text-white p-2 rounded mt-3 active:scale-90 font-bold cursor-pointer' onClick={()=>handlecart(single)}>Add to cart</button>         
 
           </div>
     

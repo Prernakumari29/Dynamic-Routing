@@ -24,6 +24,7 @@ const Home = () => {
    const navigate= useNavigate()
 
    const addCart = (items)=>{
+
       setCart(prev => [...prev , items])
       alert("item is added")
    }

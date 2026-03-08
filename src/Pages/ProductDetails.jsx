@@ -44,7 +44,7 @@ const ProductDetails = () => {
         <div className='flex items-center justify-between '>
           <div >
             <h1>{SingleProduct.title}</h1> 
-            <h1 className='text-red-600 '><span className='text-black line-through'>₹{SingleProduct.price}</span> <span className='text-2xl'>₹ {SingleProduct.price} </span> </h1>
+            <h1 className='text-red-600 '><span className='text-black line-through'>${SingleProduct.price}</span> <span className='text-2xl'> ${SingleProduct.price} </span> </h1>
           </div>
             <button className='bg-cyan-900 text-white p-2 rounded mt-3 active:scale-90 font-bold mr-48' onClick={()=>addToCart(SingleProduct)}>Add to cart</button>         
         </div>
