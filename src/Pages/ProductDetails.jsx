@@ -1,19 +1,20 @@
 import React, { useContext } from 'react'
 import {  useNavigate, useParams } from 'react-router-dom'
 import { mystore } from '../contextAPI';
+import { mycart } from '../contexts/CartContextApi';
 
 const ProductDetails = () => {
     const {id} =useParams();
-    let {product , setCart} = useContext(mystore)
+    let {product } = useContext(mystore)
+    let {cart ,setCart , handlecart , increaseQty , decreaseQty} = useContext(mycart)
     const SingleProduct = product.find((item) => item.id == id)
+
+    const itemInCart = cart.find((item) => item.id == SingleProduct.id)
 
     const navigate = useNavigate()
 
     // ------------------------------------------Add to cart-----------------------------------------------------
-    const addToCart = (data) => {
-      setCart(prev => [...prev , data])
-      alert("item is added")
-    }
+    
 
   return (
 
@@ -41,12 +42,43 @@ const ProductDetails = () => {
 
     </div>
          {/* ------------------------------------------- Bottom Part----------------------------------------------------------- */}
-        <div className='flex items-center justify-between '>
+        <div className='flex items-center justify-between mr-48 '>
           <div >
             <h1>{SingleProduct.title}</h1> 
             <h1 className='text-red-600 '><span className='text-black line-through'>${SingleProduct.price}</span> <span className='text-2xl'> ${SingleProduct.price} </span> </h1>
           </div>
-            <button className='bg-cyan-900 text-white p-2 rounded mt-3 active:scale-90 font-bold mr-48' onClick={()=>addToCart(SingleProduct)}>Add to cart</button>         
+            {/* <button className='bg-cyan-900 text-white p-2 rounded mt-3 active:scale-90 font-bold mr-48' onClick={()=>handlecart(SingleProduct)}>Add to cart</button>          */}
+            {
+              itemInCart ?
+                (
+
+                    <div className="flex gap-3  p-2 mt-3  border border-cyan-900 rounded-full">
+
+                      <button
+                        className='bg-gray-300 px-2 font-bold'
+                        onClick={() => decreaseQty(SingleProduct.id)}
+                      >
+                        -
+                      </button>
+
+                      <span>{itemInCart.qty}</span>
+
+                      <button
+                        className='bg-gray-300 px-2 font-bold'
+                        onClick={() => increaseQty(SingleProduct.id)}
+                      >
+                        +
+                      </button>
+
+                    </div>
+
+                  ) 
+              :
+              (
+            <button className='bg-cyan-900 text-white p-2 rounded mt-3 active:scale-90 font-bold ' onClick={()=>handlecart(SingleProduct)}>Add to cart</button>         
+
+              )
+            }
         </div>
       </div>     
     </div>

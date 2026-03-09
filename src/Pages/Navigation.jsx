@@ -1,10 +1,12 @@
 import React, { useContext } from 'react'
 import {  NavLink } from 'react-router-dom'
 import { mystore } from '../contextAPI'
+import { mycart } from '../contexts/CartContextApi';
 
 
 const Navigation = () => {
-    let{cart  , setIsAuth , userName } = useContext(mystore);
+    let{ setIsAuth , userName } = useContext(mystore);
+    let{cart } = useContext(mycart)
   return (
     <div className='bg-cyan-800 text-white  w-full flex justify-between items-center p-4 font-bold  gap-6 relative'>
         <h1 className='font-serif'> <span className='text-4xl font-serif '>S</span>hop <span className='text-2xl font-serif '>S</span>top <i className="ri-shopping-bag-4-fill text-white text-2xl"></i></h1>

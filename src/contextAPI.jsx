@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 import smartMobile from "./electronic-Images/SmartMobile.avif"
 import keypad from "./electronic-Images/Keypad.webp"
 import Headset from "./electronic-Images/Headset.avif"
@@ -73,13 +73,7 @@ export let ContextProvider = ({children})=>{
 
     const[product , setProduct] = useState([])
    
-    const [cart , setCart] = useState(()=>{
-      let cartItem = localStorage.getItem("cart")
-      return cartItem ? JSON.parse(cartItem):[]
-    })
-    useEffect(()=>{
-      localStorage.setItem("cart", JSON.stringify(cart))
-    },[cart])
+    
 
     const [isAuth , setIsAuth] = useState(false)
 
@@ -1135,6 +1129,6 @@ export let ContextProvider = ({children})=>{
     
 
     return (
-        <mystore.Provider value={{product,setProduct, cart , setCart,isAuth , setIsAuth,userName , setUserName , viewData , setViewData , viewMoreData,volume , setVolume}}>{children}</mystore.Provider>
+        <mystore.Provider value={{product,setProduct,isAuth , setIsAuth,userName , setUserName , viewData , setViewData , viewMoreData,volume , setVolume}}>{children}</mystore.Provider>
     )
 }

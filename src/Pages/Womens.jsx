@@ -6,19 +6,17 @@ import { useNavigate } from 'react-router-dom'
 import WomenVideo from "../assets/WomenVideo.mp4"
 import WomenThreeTop from "../assets/WomenThreeTop.jpg"
 import WomenAimly from "../assets/WomenAimly.jpg"
+import { mycart } from '../contexts/CartContextApi'
 
 
 const Womens = () => {
     
-    let {viewMoreData, setCart,volume , setVolume} = useContext(mystore)
+    let {viewMoreData ,volume , setVolume} = useContext(mystore)
+    let {cart ,setCart , handlecart , increaseQty , decreaseQty} = useContext(mycart)
     const singleProduct = viewMoreData.find((u) => u.id === 1)
     const navigate = useNavigate() 
     
 
-    const addCart = (data)=>{
-       setCart((prev) => [...prev ,data])
-       alert("item is added")
-    }
 
     if(!singleProduct){
         return <h2>loading....</h2>
@@ -65,8 +63,10 @@ const Womens = () => {
           <div className='flex gap-10 flex-wrap  px-30 py-2'>
       {       
         singleProduct.products.map(function(elem){
+
+          const itemInCart = cart.find((item) => item.id == elem.id)
             return(
-                <div key={elem.id} className='h-80 w-56 hover:bg-gray-100 p-3 rounded '> 
+                <div key={elem.id} className='h-84 w-56 hover:bg-gray-100 p-3 rounded '> 
             
             <div className='h-48 w-full rounded' onClick={()=> navigate(`/particularproduct/${elem.id}`)} >
               <img src={elem.image} alt="image hai" className='h-full w-full object-cover'/>
@@ -74,7 +74,38 @@ const Womens = () => {
 
             <h1 className='mt-4'>{elem.name}</h1>
             <h1 className='text-red-600 text-xl'><span className='text-black line-through text-sm'>₹{elem.oldPrice}</span> ₹{elem.price}  </h1>
-            <button className='bg-cyan-900 text-white w-full mt-2 p-1 rounded cursor-pointer active:scale-90' onClick={()=>addCart(elem)} >Add to cart</button>
+            {/* <button className='bg-cyan-900 text-white w-full mt-2 p-1 rounded cursor-pointer active:scale-90' onClick={()=>handlecart(elem)} >Add to cart</button> */}
+
+            {
+              itemInCart ?
+               (
+
+                    <div className='flex gap-3 bg-yellow-900 text-white  rounded mt-2 cursor-pointer items-center justify-center font-bold'>
+
+
+                      <button
+                        className='  font-bold text-2xl'
+                        onClick={() => decreaseQty(elem.id)}
+                      >
+                        -
+                      </button>
+
+                      <span>{itemInCart.qty}</span>
+
+                      <button
+                        className='  font-bold text-xl'
+                        onClick={() => increaseQty(elem.id)}
+                      >
+                        +
+                      </button>
+
+                    </div>
+
+                  ) 
+
+              :
+              (<button className='bg-cyan-900 text-white w-full mt-2 p-1 rounded cursor-pointer active:scale-90' onClick={()=>handlecart(elem)} >Add to cart</button> )
+            }
             </div>
             )
         })

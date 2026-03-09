@@ -3,16 +3,15 @@ import { mystore } from '../contextAPI'
 import { useNavigate } from 'react-router-dom'
 import MenVideo from "../MenDress.jsx/MenVideo.mp4"
 import MenLuxImage from "../MenDress.jsx/MenLuxImage.jpg"
+import { mycart } from '../contexts/CartContextApi'
 
 const Mens = () => {
-    let{viewMoreData,setCart,volume , setVolume} = useContext(mystore)
+    let{viewMoreData,volume , setVolume} = useContext(mystore)
+    let {cart ,setCart , handlecart , increaseQty , decreaseQty} = useContext(mycart)
     let MensProduct = viewMoreData.find((pro) => pro.id === 2)
     const navigate = useNavigate()
 
-    const addCart = (data)=>{
-    setCart((prev) => [...prev , data ])
-    alert("item is added")
-    }
+   
   return (
     <>
  {/* -------------------------------------------1-50 mens part---------------------------------------------------    */}
@@ -51,6 +50,8 @@ const Mens = () => {
       <div className='flex gap-10 flex-wrap  px-30 py-3'>    
       {
         MensProduct.products.map(function(elem){
+
+          const itemInCart = cart.find((item) => item.id == elem.id)
             return(
               <div className='h-80 w-56 hover:bg-gray-100 p-3 rounded '> 
             
@@ -60,7 +61,39 @@ const Mens = () => {
 
             <h1 className='mt-4'>{elem.name}</h1>
             <h1 className='text-red-600 text-xl'><span className='text-black line-through text-sm'>₹{elem.oldPrice}</span> ₹{elem.price}  </h1>
-            <button className='bg-cyan-900 text-white w-full mt-2 p-1 rounded cursor-pointer active:scale-90' onClick={()=> addCart(elem)} >Add to cart</button>
+            {/* <button className='bg-cyan-900 text-white w-full mt-2 p-1 rounded cursor-pointer active:scale-90' onClick={()=> handlecart(elem)} >Add to cart</button> */}
+
+            {
+              itemInCart ?
+                (
+
+                    <div className='flex gap-3 bg-yellow-900 text-white  rounded mt-2 cursor-pointer items-center justify-center font-bold'>
+
+
+                      <button
+                        className='  font-bold text-2xl'
+                        onClick={() => decreaseQty(elem.id)}
+                      >
+                        -
+                      </button>
+
+                      <span>{itemInCart.qty}</span>
+
+                      <button
+                        className='  font-bold text-xl'
+                        onClick={() => increaseQty(elem.id)}
+                      >
+                        +
+                      </button>
+
+                    </div>
+
+                  ) 
+              :
+              (
+                <button className='bg-cyan-900 text-white w-full mt-2 p-1 rounded cursor-pointer active:scale-90' onClick={()=> handlecart(elem)} >Add to cart</button>
+              )
+            }
             </div>
             )
         })

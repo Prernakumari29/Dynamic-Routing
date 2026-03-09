@@ -1,10 +1,11 @@
 import React, { useContext } from 'react'
-import { mystore } from '../contextAPI'
 import Lottie from "lottie-react";
 import cartAnnimation from "../assets/Empty-cart .json";
+import { mycart } from '../contexts/CartContextApi';
 
 const Cart = () => {
-  let { cart, setCart } = useContext(mystore);
+  
+  let {cart ,setCart , handlecart , increaseQty , decreaseQty} = useContext(mycart)
 
   const handleRemove = (id) => {
     const updatedarr = cart.filter((item) => item.id !== id)
@@ -12,7 +13,7 @@ const Cart = () => {
   }
 
   let totalprice = cart.reduce(function(acc , item){
-          return acc+ item.price
+          return acc+ item.price * item.qty
   },0)
 
   if(cart.length === 0 ){
@@ -24,7 +25,7 @@ const Cart = () => {
   
   return (
     
-    <div className='bg-gray-200  p-10  '>
+    <div className='bg-gray-200 min-h-screen p-10  '>
       
       <div className='flex justify-between bg-white px-10 py-3  '>
         <h1 className='text-3xl '>Shoping Cart</h1>
@@ -48,8 +49,26 @@ const Cart = () => {
                         <h4 className='text-gray-500'>Gift option is not Available</h4>
                       </div>
 
-                      <div className='flex gap-10'>
-                        <h1 className='bg-amber-500 '>hello</h1>
+                      <div className='flex gap-10 items-center'>
+                        
+                          <div className='flex gap-2 border border-amber-400 rounded-full p-2'>
+                          <button
+              className='bg-gray-300 px-2  '
+              onClick={()=>decreaseQty(elem.id)}
+            >
+              -
+            </button>
+
+            <span>{elem.qty}</span>
+
+            <button
+              className='bg-gray-300 px-2'
+              onClick={()=>increaseQty(elem.id)}
+            >
+              +
+            </button>
+                        </div>
+                        
                         <h1 className='bg-red-500 text-white p-1 rounded font-bold cursor-pointer' onClick={() => handleRemove(elem.id)}>Remove</h1>
                       </div>
                     </div>
@@ -59,7 +78,7 @@ const Cart = () => {
                  <div className='flex flex-col gap-10'>
                    <div>
                     <h1 className='text-red-600 font-semibold text-sm text-center'>Limited time deal</h1>
-                    <h2 className='font-bold text-center text-xl'>₹{elem.price}.00</h2>
+                    <h2 className='font-bold text-center text-xl'>₹{elem.price * elem.qty}.00</h2>
                     <h3 className='text-center text-xs'>M.R.P.:<span className='line-through'>₹{elem.oldPrice}.00</span></h3>
                   </div>
                   <button className='bg-yellow-400 rounded-xl pl-6 pr-6 p-1'>Proceed to Buy</button>
@@ -73,7 +92,7 @@ const Cart = () => {
       }
 
       <div className='bg-white  mt-1 flex flex-col items-end justify-end p-2 gap-2'>
-         <h1 className='font-semibold text-xl '>Subtotal({cart.length} items): <span className=' text-3xl'>₹{totalprice}.00</span></h1>
+         <h1 className='font-semibold text-xl '>Subtotal({cart.length} items): <span className=' text-3xl'>₹{totalprice}</span></h1>
          <h2 className='bg-green-600 text-white p-0.5 pl-2 pr-2 rounded'>Pay Now</h2>
       </div>
       
