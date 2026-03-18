@@ -75,9 +75,24 @@ export let ContextProvider = ({children})=>{
    
     
 
-    const [isAuth , setIsAuth] = useState(false)
+    const [isAuth , setIsAuth] = useState(
+      localStorage.getItem("auth") === "true"
+    )
 
-    const [userName , setUserName] = useState("")
+    const login = () =>{
+      setIsAuth(true)
+      localStorage.setItem("auth" , "true")
+    }
+
+    const logout = () =>{
+      setIsAuth(false)
+      localStorage.removeItem("auth")
+       localStorage.removeItem("username")
+    }
+
+    const [userName , setUserName] = useState(
+      localStorage.getItem("username") || ""
+    )
 
     const [viewData , setViewData] = useState([
       {
@@ -1129,6 +1144,6 @@ export let ContextProvider = ({children})=>{
     
 
     return (
-        <mystore.Provider value={{product,setProduct,isAuth , setIsAuth,userName , setUserName , viewData , setViewData , viewMoreData,volume , setVolume}}>{children}</mystore.Provider>
+        <mystore.Provider value={{product,setProduct,isAuth , setIsAuth, login , logout ,userName , setUserName , viewData , setViewData , viewMoreData,volume , setVolume}}>{children}</mystore.Provider>
     )
 }

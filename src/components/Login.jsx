@@ -14,10 +14,11 @@ const Login = ({setToggle}) => {
         let users = JSON.parse(localStorage.getItem("users")) || []
         const foundUser = users.find((u) => u.name === data.name && u.password === data.password)
         if(foundUser){
-            // alert("Login successful 🎉")
             toast.success("Login successful 🎉")
-            setUserName(foundUser.name)
+            
          setIsAuth(true)
+         localStorage.setItem("auth","true") 
+          localStorage.setItem("username",foundUser.name)
          reset();
         }
         else{
@@ -25,6 +26,7 @@ const Login = ({setToggle}) => {
             reset();
         }         
     }
+
   return (
     <div >
         <h1 className='text-2xl font-semibold text-center mb-6'>Login </h1>
@@ -48,7 +50,7 @@ const Login = ({setToggle}) => {
 
 
         <div >
-            <button className='bg-blue-500 w-full p-1 rounded text-white px-3 text-center active:scale-90 cursor-pointer'>Log In</button>
+            <button className='bg-blue-500 w-full p-1 rounded text-white px-3 text-center active:scale-90 cursor-pointer' >Log In</button>
         </div>
       </form>
 

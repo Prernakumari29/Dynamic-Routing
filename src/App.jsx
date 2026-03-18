@@ -4,44 +4,52 @@ import Home from './Pages/Home'
 
 import Cart from './Pages/Cart'
 import ProductDetails from './Pages/ProductDetails'
-import Navigation from './Pages/Navigation'
 import { mystore } from './contextAPI'
 import Authentication from './components/Authentication'
-import bg from './assets/AuthBackground.jpg'
 import ViewMoreDetails from './Pages/ViewMoreDetails'
 import ParticularProduct from './Pages/ParticularProduct'
 import Womens from './Pages/Womens'
 import Mens from './Pages/Mens'
-import Footer from './components/Footer'
+import Error from './Pages/Error'
+import MainLayout from './Pages/MainLayout'
 
 const App = () => {
 
   let {isAuth , setIsAuth} = useContext(mystore)
 
+
   if(!isAuth){
     return(
-     <div className='min-h-screen   bg-no-repeat bg-cover bg-top' style={{ backgroundImage: `url(${bg})` }} > 
-     <h1 className='text-white absolute left-1/2 transform -translate-x-1/2 text-4xl text-center leading-loose tracking-wider '>WELCOME  TO  <br /> <span className='text-6xl font-serif'>SHOP STOP <i className="ri-shopping-bag-4-fill text-white text-6xl"></i></span></h1>
+    
       <Routes> 
         <Route path='/' element={<Authentication />} />
+        <Route path='*' element={<Error />} />
       </Routes>
-     </div>
+     
     )
   }
   return (
     <div >
-      <Navigation />
+      
+      
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/womens' element={<Womens />} />
-        <Route path='/mens' element={<Mens />} />
-        <Route path='/cart' element={<Cart />} />
-        <Route path='/productDetails/:id' element={<ProductDetails />} />
-        <Route path='/ViewMoreDetails/:id' element={<ViewMoreDetails />} />
-        <Route path='/particularproduct/:id' element={<ParticularProduct />} />
-      </Routes>
+        <Route element={<MainLayout />}>
 
-    <Footer />
+          <Route path='/' element={<Home />} />
+          <Route path='/womens' element={<Womens />} />
+          <Route path='/mens' element={<Mens />} />
+          <Route path='/cart' element={<Cart />} />
+          <Route path='/productDetails/:id' element={<ProductDetails />} />
+          <Route path='/ViewMoreDetails/:id' element={<ViewMoreDetails />} />
+          <Route path='/particularproduct/:id' element={<ParticularProduct />} />
+        
+        </Route>
+
+        <Route path='*' element={<Error />}/>
+      </Routes>
+      
+
+    
     </div>
   )
 }
