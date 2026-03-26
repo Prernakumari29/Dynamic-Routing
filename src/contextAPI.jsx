@@ -88,6 +88,7 @@ export let ContextProvider = ({children})=>{
       setIsAuth(false)
       localStorage.removeItem("auth")
        localStorage.removeItem("username")
+       setUserName("") 
     }
 
     const [userName , setUserName] = useState(

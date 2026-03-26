@@ -19,6 +19,8 @@ const Login = ({setToggle}) => {
          setIsAuth(true)
          localStorage.setItem("auth","true") 
           localStorage.setItem("username",foundUser.name)
+          setUserName(foundUser.name)
+          setToggle(true)
          reset();
         }
         else{
